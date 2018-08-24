@@ -1,0 +1,120 @@
+000h: Dispatched FPU Operations
+001h: Cycles in which the FPU is Empty
+002h: Dispatched Fast Flag FPU Operations
+003h: Retired SSE Operations
+004h: Retired Move Ops
+005h: Retired Serializing Ops
+006h: Number of Cycles that a Serializing uop is in the FP Scheduler
+020h: Segment Register Loads
+021h: Pipeline Restart Due to Self-Modifying Code
+022h: Pipeline Restart Due to Probe Hit
+023h: LS Buffer 2 Full
+024h: Locked Operations
+026h: Retired CLFLUSH Instructions
+027h: Retired CPUID Instructions
+02Ah: Cancelled Store to Load Forward Operations
+02Bh: SMIs Received
+040h: Data Cache Accesses
+041h: Data Cache Misses
+042h: Data Cache Refills from L2 or Northbridge
+043h: Data Cache Refills from the Northbridge
+044h: Data Cache Lines Evicted
+045h: L1 DTLB Miss and L2 DTLB Hit
+046h: L1 DTLB and L2 DTLB Miss
+047h: Misaligned Accesses
+048h: Microarchitectural Late Cancel of an Access
+049h: Microarchitectural Early Cancel of an Access
+04Ah: Single-bit ECC Errors Recorded by Scrubber
+04Bh: Prefetch Instructions Dispatched
+04Ch: DCACHE Misses by Locked Instructions
+04Dh: L1 DTLB Hit
+052h: Ineffective Software Prefetchs
+054h: Global TLB Flushes
+065h: Memory Requests by Type
+067h: Data Prefetcher
+06Ch: Northbridge Read Responses by Coherency State
+06Dh: Octwords Written to System
+076h: CPU Clocks not Halted
+07Dh: Requests to L2 Cache
+07Eh:  L2 Cache Misses
+07Fh: L2 Fill/Writeback
+165h: Page Size Mismatches
+080h: Instruction Cache Fetches
+081h: Instruction Cache Misses
+082h: Instruction Cache Refills from L2
+083h: Instruction Cache Refills from System
+084h: L1 ITLB Miss, L2 ITLB Hit
+085h: L1 ITLB Miss, L2 ITLB Miss
+086h: Pipeline Restart Due to Instruction Stream Probe
+087h: Instruction Fetch Stall
+088h: Return Stack Hits
+089h: Return Stack Overflows
+08Bh: Instruction Cache Victims
+08Ch: Instruction Cache Lines Invalidated
+099h: ITLB Reloads
+09Ah: ITLB Reloads Aborted
+0C0h: Retired Instructions
+0C1h: Retired uops
+0C2h: Retired Branch Instructions
+0C3h: Retired Mispredicted Branch Instructions
+0C4h: Retired Taken Branch Instructions
+0C5h: Retired Taken Branch Instructions Mispredicted
+0C6h: Retired Far Control Transfers
+0C7h: Retired Branch Resyncs
+0C8h: Retired Near Returns
+0C9h: Retired Near Returns Mispredicted
+0CAh: Retired Indirect Branches Mispredicted
+0CBh: Retired MMX(TM)/FP Instructions
+0CCh: Retired Fastpath Double Op Instructions
+0CDh: Interrupts-Masked Cycles
+0CEh: Interrupts-Masked Cycles with Interrupt Pending
+0CFh: Interrupts Taken
+0D0h: Decoder Empty
+0D1h: Dispatch Stalls
+0D2h: Dispatch Stall for Branch Abort to Retire
+0D3h: Dispatch Stall for Serialization
+0D4h: Dispatch Stall for Segment Load
+0D5h: Dispatch Stall for Reorder Buffer Full
+0D6h: Dispatch Stall for Reservation Station Full
+0D7h: Dispatch Stall for FPU Full
+0D8h: Dispatch Stall for LS Full
+0D9h: Dispatch Stall Waiting for All Quiet
+0DAh: Dispatch Stall for Far Transfer or Resync to Retire
+0DBh: FPU Exceptions
+0DCh: DR0 Breakpoint Matches
+0DDh: DR1 Breakpoint Matches
+0DEh: DR2 Breakpoint Matches
+0DFh: DR3 Breakpoint Matches
+1C0h: Retired x87 Floating Point Operations
+1CFh: IBS Ops Tagged
+1D3h: LFENCE Instructions Retired
+1D4h: SFENCE Instructions Retired
+1D5h: MFENCE Instructions Retired
+0E0h: DRAM Accesses
+0E1h: DRAM Controller Page Table Overflows
+0E2h: Memory Controller DRAM Command Slots Missed
+0E3h: Memory Controller Turnarounds
+0E4h: Memory Controller Bypass Counter Saturation
+0E8h: Thermal Status
+0E9h: CPU/IO Requests to Memory/IO
+0EAh: Cache Block Commands
+0EBh: Sized Commands
+0ECh: Probe Responses and Upstream Requests
+0EEh: GART Events
+1F0h: Memory Controller Requests
+1E0h: CPU to DRAM Requests to Target Node
+1E1h: IO to DRAM Requests to Target Node
+1E2h: CPU Read Command Latency to Target Node 0-3
+1E3h: CPU Read Command Requests to Target Node 0-3
+1E4h: CPU Read Command Latency to Target Node 4-7
+1E5h: CPU Read Command Requests to Target Node 4-7
+1E6h: CPU Command Latency to Target Node 0-3/4-7
+1E7h: CPU Requests to Target Node 0-3/4-7
+0F6h: HyperTransport(TM) Link 0 Transmit Bandwidth
+0F7h: HyperTransport(TM) Link 1 Transmit Bandwidth
+0F8h: HyperTransport(TM) Link 2 Transmit Bandwidth
+1F9h: HyperTransport(TM) Link 3 Transmit Bandwidth
+4E0h: Read Request to L3 Cache
+4E1h: L3 Cache Misses
+4E2h: L3 Fills caused by L2 Evictions
+4E3h: L3 Evictions

@@ -1,0 +1,1 @@
+cmd_/home/bingo/topmc/topmc_mod/topmc_module_2.ko := ld -r -m elf_x86_64  --build-id -o /home/bingo/topmc/topmc_mod/topmc_module_2.ko /home/bingo/topmc/topmc_mod/topmc_module_2.o /home/bingo/topmc/topmc_mod/topmc_module_2.mod.o

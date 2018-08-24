@@ -1,0 +1,1 @@
+cmd_/root/topmc-process-switch-ban-UCUPT/topmc_mod/topmc_module.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /root/topmc-process-switch-ban-UCUPT/topmc_mod/topmc_module.ko /root/topmc-process-switch-ban-UCUPT/topmc_mod/topmc_module.o /root/topmc-process-switch-ban-UCUPT/topmc_mod/topmc_module.mod.o

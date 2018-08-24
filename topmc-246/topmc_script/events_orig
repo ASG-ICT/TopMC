@@ -1,0 +1,97 @@
+0x3c: CPU_CLK_UNHALTED
+0x3c: UNHALTED_REFERENCE_CYCLES ; Unhalted reference cycles
+0x2e: LLC_MISSES ; Last level cache demand requests from this core that missed the LLC
+0x2e: LLC_REFS ; Last level cache demand requests from this core
+0xc0: INST_RETIRED ; number of instructions retired
+0xc4: BR_INST_RETIRED ; number of branch instructions retired
+0xc5: BR_MISS_PRED_RETIRED ; number of mispredicted branches retired (precise)
+0x02: SB_FORWARD ; Counts the number of store forwards.
+0x03: LOAD_BLOCK ; Counts the number of loads blocked
+0x04: SB_DRAIN ; Counts the cycles of store buffer drains.
+0x05: MISALIGN_MEM_REF ; Counts the number of misaligned load references
+0x06: STORE_BLOCKS ; This event counts the number of load operations delayed caused by preceding stores.
+0x07: PARTIAL_ADDRESS_ALIAS ; Counts false dependency due to partial address aliasing
+0x08: DTLB_LOAD_MISSES ; Counts dtlb page walks
+0x09: MEMORY_DISAMBIGURATION ; Counts memory disambiguration events
+0x0B: MEM_INST_RETIRED ; Counts the number of instructions with an architecturally-visible load/store retired on the architected path.
+0x0C: MEM_STORE_RETIRED ; The event counts the number of retired stores that missed the DTLB. The DTLB miss is not counted if the store operation causes a fault. Does not count prefetches. Counts both primary and secondary misses to the TLB
+0x0E: UOPS_ISSUED ; Counts the number of Uops issued by the Register Allocation Table to the Reservation Station, i.e. the UOPs issued from the front end to the back end.
+0x0F: MEM_UNCORE_RETIRED ; Counts number of memory load instructions retired where the memory reference hit modified data in another core
+0x10: FP_COMP_OPS_EXE ; Counts the number of FP Computational Uops Executed.
+0x12: SIMD_INT_128 ; Counts number of 128 bit SIMD integer operations.
+0x13: LOAD_DISPATCH ; Counts number of loads dispatched from the Reservation Station that bypass.
+0x14: ARITH ; Counts division cycles and number of multiplies. Includes integer and FP, but excludes DPPS/MPSAD.
+0x17: INST_QUEUE_WRITES ; Counts the number of instructions written into the instruction queue every cycle.
+0x18: INST_DECODED ; Counts number of instructions that require  decoder 0 to be decoded. Usually, this means that the instruction maps to more than 1 uop
+0x19: TWO_UOP_INSTS_DECODED ; An instruction that generates two uops was decoded
+0x1D: HW_INT ; Counts hardware interrupt events.
+0x1E: INST_QUEUE_WRITE_CYCLES ; This event counts the number of cycles during which instructions are written to the instruction queue.  Dividing this counter by the number of instructions written to the instruction queue (INST_QUEUE_WRITES) yields the average number of instructions decoded each cycle. If this number is  less than four and the pipe stalls, this indicates that the decoder is failing to decode enough instructions per cycle to sustain the 4-wide pipeline.
+0x24: L2_RQSTS ; Counts number of L2 data loads
+0x26: L2_DATA_RQSTS ; More L2 data loads.
+0x27: L2_WRITE ; Counts number of L2 writes
+0x28: L1D_WB_L2 ; Counts number of L1 writebacks to the L2.
+0x2E: LONGEST_LAT_CACHE ; Count LLC cache reference latencies.
+0x3C: CPU_CLK_UNHALTED ; Counts the number of thread cycles while the thread is not in a halt state.
+0x3D: UOPS_DECODED_DEC0 ; Counts micro-ops decoded by decoder 0.
+0x40: L1D_CACHE_LD ; Counts L1 data cache read requests.
+0x41: L1D_CACHE_ST ; Counts L1 data cache stores.
+0x42: L1D_CACHE_LOCK ; Counts retired load locks in the L1D cache.
+0x43: L1D_ALL_REF ; Counts all references to the L1 data cache,
+0x49: DTLB_MISSES ; Counts the number of misses in the STLB
+0x4B: SSE_MEM_EXEC ; Counts number of SSE instructions which missed the L1 data cache.
+0x4C: LOAD_HIT_PRE ; Counts load operations sent to the L1 data cache while a previous SSE prefetch instruction to the same cache line has started prefetching but has not yet finished.
+0x4D: SFENCE_CYCLES ; Counts store fence cycles
+0x4E: L1D_PREFETCH ; Counts number of hardware prefetch requests.
+0x4F: EPT ; Counts Extended Page Directory Entry accesses. The Extended Page Directory cache is used by Virtual Machine operating systems while the guest operating systems use the standard TLB caches.
+0x51: L1D ; Counts the number of lines brought from/to the L1 data cache.
+0x52: L1D_CACHE_PREFETCH_LOCK_FB_HIT ; Counts the number of cacheable load lock speculated instructions accepted into the fill buffer.
+0x53: L1D_CACHE_LOCK_FB_HIT ; Counts the number of cacheable load lock speculated or retired instructions accepted into the fill buffer.
+0x60: OFFCORE_REQUESTS_OUTSTANDING ; Counts weighted cycles of offcore requests.
+0x63: CACHE_LOCK_CYCLES ; Cycle count during which the L1/L2 caches are locked.  A lock is asserted when there is a locked memory access, due to uncacheable memory, a locked operation that spans two cache lines, or a page walk from an uncacheable page table.
+0x6C: IO_TRANSACTIONS ; Counts the number of completed I/O transactions.
+0x80: L1I ; Counts L1i instruction cache accesses.
+0x81: IFU_IVC ; Instruction Fetch unit events
+0x82: LARGE_ITLB ; Counts number of large ITLB accesses
+0x83: L1I_OPPORTUNISTIC_HITS ; Opportunistic hits in streaming.
+0x85: ITLB_MISSES ; Counts the number of ITLB misses in various variants
+0x87: ILD_STALL ; Cycles Instruction Length Decoder stalls
+0x88: BR_INST_EXEC ; Counts the number of near branch instructions executed, but not necessarily retired.
+0x89: BR_MISP_EXEC ; Counts the number of mispredicted conditional near branch instructions executed, but not necessarily retired.
+0xA2: RESOURCE_STALLS ; Counts the number of Allocator resource related stalls. Includes register renaming buffer entries, memory buffer entries. In addition to resource related stalls, this event counts some other events. Includes stalls arising during branch misprediction recovery, such as if retirement of the mispredicted branch is delayed and stalls arising while store buffer is draining from synchronizing operations.
+0xA6: MACRO_INSTS ; Counts the number of instructions decoded that are macro-fused but not necessarily executed or retired.
+0xA7: BACLEAR_FORCE_IQ ; Counts number of times a BACLEAR was forced by the Instruction Queue. The IQ is also responsible for providing conditional branch prediciton direction based on a static scheme and dynamic data provided by the L2 Branch Prediction Unit. If the conditional branch target is not found in the Target Array and the IQ predicts that the branch is taken, then the IQ will force the Branch Address Calculator to issue a BACLEAR. Each BACLEAR asserted by the BAC generates approximately an 8 cycle bubble in the instruction fetch pipeline.
+0xA8: LSD ; Counts the number of micro-ops delivered by loop stream detector
+0xAE: ITLB_FLUSH ; Counts the number of ITLB flushes
+0xB0: OFFCORE_REQUESTS ; Counts number of offcore data requests.
+0xB1: UOPS_EXECUTED ; Counts number of Uops executed that were issued on various ports
+0xB2: OFFCORE_REQUESTS_SQ_FULL ; Counts number of cycles the SQ is full to handle off-core requests.
+0xB3: SNOOPQ_REQUESTS_OUTSTANDING ; Counts weighted cycles of snoopq requests.
+0xB7: OOF_CORE_RESPONSE_0 ; Off-core Response Performance Monitoring in the Processor Core. Requires special setup.
+0xB8: SNOOP_RESPONSE ; Counts HIT snoop response sent by this thread in response to a snoop request.
+0xBA: PIC_ACCESSES ; Counts number of TPR accesses
+0xC2: UOPS_RETIRED ; Counts the number of micro-ops retired, (macro-fused=1, micro-fused=2, others=1; maximum count of 8 per cycle). Most instructions are composed of one or two microops. Some instructions are decoded into longer sequences such as repeat instructions, floating point transcendental instructions, and assists
+0xC3: MACHINE_CLEARS ; Counts the cycles machine clear is asserted.
+0xC7: SSEX_UOPS_RETIRED ; Counts SIMD packed single-precision floating point Uops retired.
+0xC8: ITLB_MISS_RETIRED ; Counts the number of retired instructions that missed the ITLB when the instruction was fetched.
+0xCB: MEM_LOAD_RETIRED ; Counts number of retired loads.
+0xCC: FP_MMX_TRANS ; Counts transitions between MMX and x87 state.
+0xD0: MACRO_INSTS ; Counts the number of instructions decoded, (but not necessarily executed or retired).
+0xD1: UOPS_DECODED ; Counts the number of Uops decoded by various subsystems.
+0xD2: RAT_STALLS ; Counts the number of cycles during which execution stalled due to several reason
+0xD4: SEG_RENAME_STALLS ; Counts the number of stall cycles due to the lack of renaming resources for the ES, DS, FS, and GS segment registers. If a segment is renamed but not retired and a second update to the same segment occurs, a stall occurs in the front-end of the pipeline until the renamed segment retires.
+0xD5: ES_REG_RENAMES ; Counts the number of times the ES segment register is renamed.
+0xDB: UOP_UNFUSION ; Counts unfusion events due to floating point exception to a fused uop.
+0xE0: BR_INST_DECODED ; Counts the number of branch instructions decoded.
+0xE4: BOGUS_BR ; Counts the number of bogus branches.
+0xE5: BPU_MISSED_CALL_RET ; Counts number of times the Branch Prediciton Unit missed predicting a call or return branch.
+0xE6: BACLEAR ; Counts the number of times the front end is resteered,
+0xE8: BPU_CLEARS ; Counts Branch Prediction Unit clears.
+0xF0: L2_TRANSACTIONS ; Counts L2 transactions
+0xF1: L2_LINES_IN ; Counts the number of cache lines allocated in the L2 cache in various states.
+0xF2: L2_LINES_OUT ; Counts L2 cache lines evicted.
+0xF3: L2_HW_PREFETCH ; Count L2 HW prefetcher events
+0xF4: SQ_MISC ; Counts events in the Super Queue below the L2.
+0xF6: SQ_FULL_STALL_CYCLES ; Counts cycles the Super Queue is full. Neither of the threads on this core will be able to access the uncore.
+0xF7: FP_ASSIST ; Counts the number of floating point operations executed that required micro-code assist intervention.
+0xF8: SEGMENT_REG_LOADS ; Counts number of segment register loads
+0xFD: SIMD_INT_64 ; Counts number of SID integer 64 bit packed multiply operations.

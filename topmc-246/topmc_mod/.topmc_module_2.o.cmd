@@ -1,0 +1,1 @@
+cmd_/home/bingo/topmc/topmc_mod/topmc_module_2.o := ld -m elf_x86_64   -r -o /home/bingo/topmc/topmc_mod/topmc_module_2.o /home/bingo/topmc/topmc_mod/topmc_model_nehelam.o /home/bingo/topmc/topmc_mod/topmc_model_amd.o /home/bingo/topmc/topmc_mod/topmc_mod.o /home/bingo/topmc/topmc_mod/topmc_mod_lib.o /home/bingo/topmc/topmc_mod/topmc_msr.o 

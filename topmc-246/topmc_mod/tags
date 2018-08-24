@@ -1,0 +1,211 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.6	//
+EVNT_SEL0	topmc_pmc_config_amd.h	5;"	d
+EVNT_SEL1	topmc_pmc_config_amd.h	6;"	d
+EVNT_SEL2	topmc_pmc_config_amd.h	7;"	d
+EVNT_SEL3	topmc_pmc_config_amd.h	8;"	d
+EVNT_SEL_RESERVED	topmc_pmc_config_amd.h	11;"	d
+MSR_CORE_PERF_FIXED_CTR0	topmc_pmc_config_intel_nehelam.h	6;"	d
+MSR_CORE_PERF_FIXED_CTR1	topmc_pmc_config_intel_nehelam.h	7;"	d
+MSR_CORE_PERF_FIXED_CTR2	topmc_pmc_config_intel_nehelam.h	8;"	d
+MSR_CORE_PERF_FIXED_CTR_CTRL	topmc_pmc_config_intel_nehelam.h	9;"	d
+MSR_CORE_PERF_GLOBAL_CTRL	topmc_pmc_config_intel_nehelam.h	11;"	d
+MSR_CORE_PERF_GLOBAL_OVF_CTRL	topmc_pmc_config_intel_nehelam.h	12;"	d
+MSR_CORE_PERF_GLOBAL_STATUS	topmc_pmc_config_intel_nehelam.h	10;"	d
+MSR_CORE_PERF_IDX_FIX	topmc_pmc_config_intel_nehelam.h	16;"	d
+MSR_CORE_PERF_IDX_PMC	topmc_pmc_config_intel_nehelam.h	15;"	d
+MSR_CORE_PERF_NUM_FIX	topmc_pmc_config_intel_nehelam.h	17;"	d
+MSR_CORE_PERF_NUM_PMC	topmc_pmc_config_intel_nehelam.h	14;"	d
+MSR_PPRO_EVENTSEL_RESERVED	topmc_pmc_config_intel_nehelam.h	66;"	d
+PMC0	topmc_pmc_config_amd.h	26;"	d
+PMC1	topmc_pmc_config_amd.h	27;"	d
+PMC2	topmc_pmc_config_amd.h	28;"	d
+PMC3	topmc_pmc_config_amd.h	29;"	d
+PMC_NUM	topmc_pmc_config_amd.h	2;"	d
+RDMSR	topmc_msr.h	17;"	d
+SET_DISABLE	topmc_pmc_config_amd.h	14;"	d
+SET_ENABLE	topmc_pmc_config_amd.h	13;"	d
+SET_EVENT_SELECT	topmc_pmc_config_amd.h	23;"	d
+SET_INT_DISABLE	topmc_pmc_config_amd.h	17;"	d
+SET_INT_ENABLE	topmc_pmc_config_amd.h	16;"	d
+SET_KERN	topmc_pmc_config_amd.h	19;"	d
+SET_UNIT_MASK	topmc_pmc_config_amd.h	22;"	d
+SET_USR	topmc_pmc_config_amd.h	20;"	d
+TOLOWER	topmc_mod_lib.c	5;"	d	file:
+TOPMC_CTRL_CLEAR_HI	topmc_pmc_config_intel_nehelam.h	95;"	d
+TOPMC_CTRL_CLEAR_LO	topmc_pmc_config_intel_nehelam.h	94;"	d
+TOPMC_CTRL_SET_ACTIVE	topmc_pmc_config_intel_nehelam.h	92;"	d
+TOPMC_CTRL_SET_CM	topmc_pmc_config_intel_nehelam.h	101;"	d
+TOPMC_CTRL_SET_EDGE	topmc_pmc_config_intel_nehelam.h	103;"	d
+TOPMC_CTRL_SET_ENABLE	topmc_pmc_config_intel_nehelam.h	96;"	d
+TOPMC_CTRL_SET_EVENT_LOW	topmc_pmc_config_intel_nehelam.h	100;"	d
+TOPMC_CTRL_SET_INACTIVE	topmc_pmc_config_intel_nehelam.h	93;"	d
+TOPMC_CTRL_SET_INV	topmc_pmc_config_intel_nehelam.h	102;"	d
+TOPMC_CTRL_SET_KERN	topmc_pmc_config_intel_nehelam.h	98;"	d
+TOPMC_CTRL_SET_UM	topmc_pmc_config_intel_nehelam.h	99;"	d
+TOPMC_CTRL_SET_USR	topmc_pmc_config_intel_nehelam.h	97;"	d
+TOPMC_EVENT_BITS_CMASK	topmc_pmc_config_intel_nehelam.h	60;"	d
+TOPMC_EVENT_BITS_EDGE	topmc_pmc_config_intel_nehelam.h	62;"	d
+TOPMC_EVENT_BITS_INV	topmc_pmc_config_intel_nehelam.h	61;"	d
+TOPMC_EVENT_BITS_KERNEL_USER	topmc_pmc_config_intel_nehelam.h	63;"	d
+TOPMC_EVENT_BITS_LOW_EVENT	topmc_pmc_config_intel_nehelam.h	58;"	d
+TOPMC_EVENT_BITS_UNIT	topmc_pmc_config_intel_nehelam.h	59;"	d
+TOPMC_EVENT_LENGTH	topmc_pmc_config_intel_nehelam.h	50;"	d
+TOPMC_EVENT_MASK_CMASK	topmc_pmc_config_intel_nehelam.h	53;"	d
+TOPMC_EVENT_MASK_EDGE	topmc_pmc_config_intel_nehelam.h	55;"	d
+TOPMC_EVENT_MASK_INV	topmc_pmc_config_intel_nehelam.h	54;"	d
+TOPMC_EVENT_MASK_KERNEL_USER	topmc_pmc_config_intel_nehelam.h	56;"	d
+TOPMC_EVENT_MASK_LOW_EVENT	topmc_pmc_config_intel_nehelam.h	51;"	d
+TOPMC_EVENT_MASK_UNIT	topmc_pmc_config_intel_nehelam.h	52;"	d
+TOPMC_MAX_COUNTER	topmc_x86_model.h	9;"	d
+TOPMC_MAX_NAMELEN	topmc_mod.c	26;"	d	file:
+TOPMC_MAX_NAMELEN	topmc_pmc_config_intel_nehelam.h	29;"	d
+TOPMC_MSR_XEON55XX_EVNTSEL0	topmc_pmc_config_intel_nehelam.h	23;"	d
+TOPMC_MSR_XEON55XX_EVNTSEL1	topmc_pmc_config_intel_nehelam.h	24;"	d
+TOPMC_MSR_XEON55XX_EVNTSEL2	topmc_pmc_config_intel_nehelam.h	25;"	d
+TOPMC_MSR_XEON55XX_EVNTSEL3	topmc_pmc_config_intel_nehelam.h	26;"	d
+TOPMC_MSR_XEON55XX_OFFCORE_RSP0	topmc_pmc_config_intel_nehelam.h	69;"	d
+TOPMC_MSR_XEON55XX_PERFCTR0	topmc_pmc_config_intel_nehelam.h	19;"	d
+TOPMC_MSR_XEON55XX_PERFCTR1	topmc_pmc_config_intel_nehelam.h	20;"	d
+TOPMC_MSR_XEON55XX_PERFCTR2	topmc_pmc_config_intel_nehelam.h	21;"	d
+TOPMC_MSR_XEON55XX_PERFCTR3	topmc_pmc_config_intel_nehelam.h	22;"	d
+TOPMC_MSR_XEON55XX_PerfCtrNum	topmc_pmc_config_intel_nehelam.h	28;"	d
+TOPMC_MSR_XEON55XX_UNC_ADDROP	topmc_pmc_config_intel_nehelam.h	76;"	d
+TOPMC_MSR_XEON55XX_UNC_BITS_MAX_PMC	topmc_pmc_config_intel_nehelam.h	84;"	d
+TOPMC_MSR_XEON55XX_UNC_BITS_MIN_PMC	topmc_pmc_config_intel_nehelam.h	85;"	d
+TOPMC_MSR_XEON55XX_UNC_BITS_NUM_PMC	topmc_pmc_config_intel_nehelam.h	87;"	d
+TOPMC_MSR_XEON55XX_UNC_EVENTSEL_RESERVED	topmc_pmc_config_intel_nehelam.h	89;"	d
+TOPMC_MSR_XEON55XX_UNC_EVNTSEL0	topmc_pmc_config_intel_nehelam.h	72;"	d
+TOPMC_MSR_XEON55XX_UNC_FIXED_CTR0	topmc_pmc_config_intel_nehelam.h	75;"	d
+TOPMC_MSR_XEON55XX_UNC_FIXED_CTRL	topmc_pmc_config_intel_nehelam.h	74;"	d
+TOPMC_MSR_XEON55XX_UNC_GLOBAL_CTRL	topmc_pmc_config_intel_nehelam.h	77;"	d
+TOPMC_MSR_XEON55XX_UNC_GLOBAL_OVF_CTRL	topmc_pmc_config_intel_nehelam.h	79;"	d
+TOPMC_MSR_XEON55XX_UNC_GLOBAL_STAT	topmc_pmc_config_intel_nehelam.h	78;"	d
+TOPMC_MSR_XEON55XX_UNC_IDX_FIXED	topmc_pmc_config_intel_nehelam.h	83;"	d
+TOPMC_MSR_XEON55XX_UNC_IDX_PMC	topmc_pmc_config_intel_nehelam.h	86;"	d
+TOPMC_MSR_XEON55XX_UNC_PERFCTR0	topmc_pmc_config_intel_nehelam.h	73;"	d
+TOPMC_MSR_XEON55XX_UNC_PerfCtrNum	topmc_pmc_config_intel_nehelam.h	81;"	d
+TOPMC_PERF_PMC_MASK	topmc_pmc_config_intel_nehelam.h	1;"	d
+TOPMC_PER_SECOND	topmc_x86_model.h	8;"	d
+TOPMC_RDMSRL	topmc_msr.h	1;"	d
+TOPMC_READ_CR4_PCE	topmc_cr4pce.h	4;"	d
+TOPMC_WRITE_CR4_PCE	topmc_cr4pce.h	5;"	d
+TOPMC_WRMSRL	topmc_msr.h	9;"	d
+TOPMC_X86_MODEL_H	topmc_x86_model.h	2;"	d
+WRMSR	topmc_msr.h	24;"	d
+_TOPMC_MOD_LIB_H	topmc_mod_lib.h	2;"	d
+__this_module	topmc_mod.mod.c	/^struct module __this_module$/;"	v	typeref:struct:module
+__this_module	topmc_module.mod.c	/^struct module __this_module$/;"	v	typeref:struct:module
+__used	topmc_mod.mod.c	/^__used$/;"	v	file:
+__used	topmc_mod.mod.c	/^__used$/;"	v	typeref:struct:____versions	file:
+__used	topmc_module.mod.c	/^__used$/;"	v	file:
+__used	topmc_module.mod.c	/^__used$/;"	v	typeref:struct:____versions	file:
+clr_topmc_cnt	topmc_mod_lib.h	17;"	d
+clr_topmc_cnt_all	topmc_mod_lib.h	19;"	d
+core_dir	topmc_mod.c	/^static struct proc_dir_entry * root_dir, * core_dir[NR_CPUS], * counter_dir[NR_CPUS][TOPMC_MAX_COUNTER];$/;"	v	typeref:struct:	file:
+counter_dir	topmc_mod.c	/^static struct proc_dir_entry * root_dir, * core_dir[NR_CPUS], * counter_dir[NR_CPUS][TOPMC_MAX_COUNTER];$/;"	v	typeref:struct:	file:
+cpu	topmc_cr4pce.c	/^    int cpu;$/;"	m	struct:topmc_cr4_command	file:
+cpu	topmc_msr.c	/^    int cpu;$/;"	m	struct:topmc_msr_command	file:
+data	topmc_cr4pce.c	/^    int data;$/;"	m	struct:topmc_cr4_command	file:
+enable	topmc_mod_lib.h	/^	unsigned int enable;$/;"	m	struct:topmc_proc_entry
+enable_all_cr4_pce	topmc_mod.c	/^unsigned int enable_all_cr4_pce;$/;"	v
+enable_all_cr4_pce_entry	topmc_mod.c	/^static struct proc_dir_entry *enable_all_cr4_pce_entry;$/;"	v	typeref:struct:proc_dir_entry	file:
+enable_entry	topmc_mod.c	/^static struct proc_dir_entry *enable_entry, * entry[NR_CPUS][TOPMC_MAX_COUNTER][3];$/;"	v	typeref:struct:proc_dir_entry	file:
+entry	topmc_mod.c	/^static struct proc_dir_entry *enable_entry, * entry[NR_CPUS][TOPMC_MAX_COUNTER][3];$/;"	v	typeref:struct:	file:
+err	topmc_cr4pce.c	/^    int err;$/;"	m	struct:topmc_cr4_command	file:
+err	topmc_msr.c	/^    int err;$/;"	m	struct:topmc_msr_command	file:
+event	topmc_mod_lib.h	/^	unsigned int event;$/;"	m	struct:topmc_proc_entry
+high	topmc_msr.c	/^    u32 high;$/;"	m	struct:topmc_msr_command	file:
+is_exist_topmc_core_global_ctrl_init	topmc_x86_model.h	/^	char is_exist_topmc_core_global_ctrl_init;$/;"	m	struct:topmc_x86_model
+is_exist_topmc_uncore_global_ctrl_init	topmc_x86_model.h	/^	char is_exist_topmc_uncore_global_ctrl_init;$/;"	m	struct:topmc_x86_model
+low	topmc_msr.c	/^    u32 low;$/;"	m	struct:topmc_msr_command	file:
+mix_cpu_counter	topmc_mod.c	/^unsigned int mix_cpu_counter[NR_CPUS][TOPMC_MAX_COUNTER];$/;"	v
+model	topmc_mod.c	/^static struct topmc_x86_model *model;$/;"	v	typeref:struct:topmc_x86_model	file:
+num_counters_core	topmc_x86_model.h	/^	int num_counters_core;$/;"	m	struct:topmc_x86_model
+num_counters_uncore	topmc_x86_model.h	/^	int num_counters_uncore;$/;"	m	struct:topmc_x86_model
+obj-m	Makefile	/^obj-m := topmc_module.o$/;"	m
+reg	topmc_msr.c	/^    u32 reg;$/;"	m	struct:topmc_msr_command	file:
+root_dir	topmc_mod.c	/^static struct proc_dir_entry * root_dir, * core_dir[NR_CPUS], * counter_dir[NR_CPUS][TOPMC_MAX_COUNTER];$/;"	v	typeref:struct:proc_dir_entry	file:
+set_topmc_cnt	topmc_mod_lib.h	16;"	d
+set_topmc_cnt_all	topmc_mod_lib.h	18;"	d
+topmc_all_enabled	topmc_model_nehelam.c	/^static int topmc_all_enabled = 0;$/;"	v	file:
+topmc_cleanup	topmc_mod.c	/^module_exit( topmc_cleanup );$/;"	v
+topmc_cleanup	topmc_mod.c	/^void __exit topmc_cleanup(void )$/;"	f
+topmc_clear_cr4_pce	topmc_cr4pce.c	/^static inline void topmc_clear_cr4_pce(void) $/;"	f	file:
+topmc_core_global_ctrl_init	topmc_mod.c	/^void topmc_core_global_ctrl_init(void)$/;"	f
+topmc_core_global_ctrl_init	topmc_x86_model.h	/^	void (*topmc_core_global_ctrl_init)(void);$/;"	m	struct:topmc_x86_model
+topmc_core_global_ctrl_init_nehelam	topmc_model_nehelam.c	/^void topmc_core_global_ctrl_init_nehelam(void)$/;"	f
+topmc_cr4_command	topmc_cr4pce.c	/^struct topmc_cr4_command {$/;"	s	file:
+topmc_cr4_pce_read	topmc_mod.c	/^int topmc_cr4_pce_read(char *page, char **start, off_t off, int count, int *eof, void *data)$/;"	f
+topmc_cr4_pce_write	topmc_mod.c	/^int topmc_cr4_pce_write(struct file *file, const char __user *buffer, unsigned long count, void *data)$/;"	f
+topmc_enable_all_read	topmc_mod.c	/^int topmc_enable_all_read(char *page, char **start, off_t off, int count, int *eof, void *data)$/;"	f
+topmc_enable_all_read	topmc_x86_model.h	/^	int (*topmc_enable_all_read)(char *page, char **start, off_t off, int count, int *eof, void *data);$/;"	m	struct:topmc_x86_model
+topmc_enable_all_read_nehelam	topmc_model_nehelam.c	/^int topmc_enable_all_read_nehelam(char *page, char **start, off_t off, int count, int *eof, void *data)$/;"	f
+topmc_enable_all_write	topmc_mod.c	/^int topmc_enable_all_write(struct file *file, const char __user * buffer, unsigned long count, void * data)$/;"	f
+topmc_enable_all_write	topmc_x86_model.h	/^	int (*topmc_enable_all_write)(struct file *file, const char __user *buffer, unsigned long count, void *data);$/;"	m	struct:topmc_x86_model
+topmc_enable_all_write_nehelam	topmc_model_nehelam.c	/^int topmc_enable_all_write_nehelam(struct file *file, const char __user * buffer, unsigned long count, void * data)$/;"	f
+topmc_enable_rdpmc	topmc_mod.c	/^void topmc_enable_rdpmc(void)$/;"	f
+topmc_enable_read	topmc_mod.c	/^int topmc_enable_read(char *page, char **start, off_t off, int count, int *eof, void *data)$/;"	f
+topmc_enable_read	topmc_x86_model.h	/^	int (*topmc_enable_read)(char *page, char **start, off_t off, int count, int *eof, void *data);$/;"	m	struct:topmc_x86_model
+topmc_enable_read_amd	topmc_model_amd.c	/^int topmc_enable_read_amd(char *page, char **start, off_t off, int count, int *eof, void *data)$/;"	f
+topmc_enable_read_nehelam	topmc_model_nehelam.c	/^int topmc_enable_read_nehelam(char *page, char **start, off_t off, int count, int *eof, void *data)$/;"	f
+topmc_enable_write	topmc_mod.c	/^int topmc_enable_write(struct file *file, const char __user * buffer, unsigned long count, void * data)$/;"	f
+topmc_enable_write	topmc_x86_model.h	/^	int (*topmc_enable_write)(struct file *file, const char __user *buffer, unsigned long count, void *data);$/;"	m	struct:topmc_x86_model
+topmc_enable_write_amd	topmc_model_amd.c	/^int topmc_enable_write_amd(struct file *file, const char __user *buffer, unsigned long count, void *data)$/;"	f
+topmc_enable_write_nehelam	topmc_model_nehelam.c	/^int topmc_enable_write_nehelam(struct file *file, const char __user * buffer, unsigned long count, void * data)$/;"	f
+topmc_event_read	topmc_mod.c	/^int topmc_event_read(char *page, char **start, off_t off, int count, int *eof, void *data)$/;"	f
+topmc_event_read	topmc_x86_model.h	/^	int (*topmc_event_read)(char *page, char **start, off_t off, int count, int *eof, void *data);$/;"	m	struct:topmc_x86_model
+topmc_event_read_amd	topmc_model_amd.c	/^int topmc_event_read_amd(char *page, char **start, off_t off, int count, int *eof, void *data)$/;"	f
+topmc_event_read_nehelam	topmc_model_nehelam.c	/^int topmc_event_read_nehelam(char *page, char **start, off_t off, int count, int *eof, void *data)$/;"	f
+topmc_event_write	topmc_mod.c	/^int topmc_event_write(struct file *file, const char __user * buffer, unsigned long count, void * data)$/;"	f
+topmc_event_write	topmc_x86_model.h	/^	int (*topmc_event_write)(struct file *file, const char __user *buffer, unsigned long count, void *data);$/;"	m	struct:topmc_x86_model
+topmc_event_write_amd	topmc_model_amd.c	/^int topmc_event_write_amd(struct file *file, const char __user *buffer, unsigned long count, void *data)$/;"	f
+topmc_event_write_nehelam	topmc_model_nehelam.c	/^int topmc_event_write_nehelam(struct file *file, const char __user * buffer, unsigned long count, void * data)$/;"	f
+topmc_init	topmc_mod.c	/^int topmc_init(void)$/;"	f
+topmc_init	topmc_mod.c	/^module_init( topmc_init );$/;"	v
+topmc_mix16to32	topmc_mod_lib.c	/^unsigned int topmc_mix16to32(unsigned short high,unsigned short low)$/;"	f
+topmc_model_detect	topmc_mod.c	/^int topmc_model_detect(void)$/;"	f
+topmc_module-objs	Makefile	/^topmc_module-objs := topmc_model_nehelam.o topmc_model_amd.o topmc_mod.o topmc_mod_lib.o topmc_msr.o topmc_cr4pce.o$/;"	m
+topmc_msr_command	topmc_msr.c	/^struct topmc_msr_command {$/;"	s	file:
+topmc_msr_init	topmc_mod.c	/^void topmc_msr_init(void)$/;"	f
+topmc_msr_init	topmc_x86_model.h	/^	void (*topmc_msr_init)(void);$/;"	m	struct:topmc_x86_model
+topmc_msr_init_amd	topmc_model_amd.c	/^void topmc_msr_init_amd(void)$/;"	f
+topmc_msr_init_nehelam	topmc_model_nehelam.c	/^void topmc_msr_init_nehelam(void)$/;"	f
+topmc_op_amd	topmc_model_amd.c	/^struct topmc_x86_model topmc_op_amd = {$/;"	v	typeref:struct:topmc_x86_model
+topmc_op_intel_nehelam	topmc_model_nehelam.c	/^struct topmc_x86_model topmc_op_intel_nehelam = {$/;"	v	typeref:struct:topmc_x86_model
+topmc_pmc_chg_flags	topmc_model_nehelam.c	/^static unsigned long topmc_pmc_chg_flags;$/;"	v	file:
+topmc_pmc_cnt_flags	topmc_model_nehelam.c	/^static unsigned long topmc_pmc_cnt_flags;$/;"	v	file:
+topmc_proc_clean	topmc_mod.c	/^void topmc_proc_clean(void)$/;"	f
+topmc_proc_entry	topmc_mod_lib.h	/^struct topmc_proc_entry{$/;"	s
+topmc_procs	topmc_mod.c	/^struct topmc_proc_entry topmc_procs[NR_CPUS][TOPMC_MAX_COUNTER];$/;"	v	typeref:struct:topmc_proc_entry
+topmc_rdmsr	topmc_msr.c	/^void topmc_rdmsr(int cpu, u32 reg, u32 *low, u32 *high)$/;"	f
+topmc_rdmsr_smp	topmc_msr.c	/^static void topmc_rdmsr_smp(void *cmd_block)$/;"	f	file:
+topmc_read_cr4_pce	topmc_cr4pce.c	/^void topmc_read_cr4_pce(int cpu, int *val) $/;"	f
+topmc_read_cr4_pce_smp	topmc_cr4pce.c	/^static void topmc_read_cr4_pce_smp(void *cmd_block)$/;"	f	file:
+topmc_set_cr4_pce	topmc_cr4pce.c	/^static inline void topmc_set_cr4_pce(void)$/;"	f	file:
+topmc_split32to16	topmc_mod_lib.c	/^void topmc_split32to16(unsigned int mix,unsigned short *high,unsigned short *low)$/;"	f
+topmc_str2int	topmc_mod_lib.c	/^unsigned int topmc_str2int(const char *cp,unsigned int count,unsigned int base)$/;"	f
+topmc_uncore_global_ctrl_init	topmc_mod.c	/^void topmc_uncore_global_ctrl_init(void)$/;"	f
+topmc_uncore_global_ctrl_init	topmc_x86_model.h	/^	void (*topmc_uncore_global_ctrl_init)(void);$/;"	m	struct:topmc_x86_model
+topmc_uncore_global_ctrl_init_nehelam	topmc_model_nehelam.c	/^void topmc_uncore_global_ctrl_init_nehelam(void)$/;"	f
+topmc_value_read	topmc_mod.c	/^int topmc_value_read(char *page, char **start, off_t off, int count, int *eof, void *data)$/;"	f
+topmc_value_read	topmc_x86_model.h	/^	int (*topmc_value_read)(char *page, char **start, off_t off, int count, int *eof, void *data);$/;"	m	struct:topmc_x86_model
+topmc_value_read_amd	topmc_model_amd.c	/^int topmc_value_read_amd(char *page, char **start, off_t off, int count, int *eof, void *data)$/;"	f
+topmc_value_read_callable_impl	topmc_mod.c	/^u64 topmc_value_read_callable_impl(unsigned short cpu, unsigned short counter)$/;"	f
+topmc_value_read_callable_impl	topmc_x86_model.h	/^	u64 (*topmc_value_read_callable_impl)(unsigned short cpu, unsigned short counter);$/;"	m	struct:topmc_x86_model
+topmc_value_read_callable_impl_nehelam	topmc_model_nehelam.c	/^u64 topmc_value_read_callable_impl_nehelam(unsigned short cpu, unsigned short counter)$/;"	f
+topmc_value_read_nehelam	topmc_model_nehelam.c	/^int topmc_value_read_nehelam(char *page, char **start, off_t off, int count, int *eof, void *data)$/;"	f
+topmc_value_write	topmc_mod.c	/^int topmc_value_write(struct file *file, const char __user * buffer, unsigned long count, void * data)$/;"	f
+topmc_value_write	topmc_x86_model.h	/^	int (*topmc_value_write)(struct file *file, const char __user *buffer, unsigned long count, void *data);$/;"	m	struct:topmc_x86_model
+topmc_value_write_amd	topmc_model_amd.c	/^int topmc_value_write_amd(struct file *file, const char __user *buffer, unsigned long count, void *data)$/;"	f
+topmc_value_write_nehelam	topmc_model_nehelam.c	/^int topmc_value_write_nehelam(struct file *file, const char __user * buffer, unsigned long count, void * data)$/;"	f
+topmc_write_cr4_pce	topmc_cr4pce.c	/^void topmc_write_cr4_pce(int cpu, int val) $/;"	f
+topmc_write_cr4_pce_smp	topmc_cr4pce.c	/^static void topmc_write_cr4_pce_smp(void *cmd_block)$/;"	f	file:
+topmc_wrmsr	topmc_msr.c	/^void topmc_wrmsr(int cpu, u32 reg, u32 low, u32 high)$/;"	f
+topmc_wrmsr_smp	topmc_msr.c	/^static void topmc_wrmsr_smp(void *cmd_block)$/;"	f	file:
+topmc_x86_model	topmc_x86_model.h	/^struct topmc_x86_model {$/;"	s
+value	topmc_mod_lib.h	/^	unsigned long long value;$/;"	m	struct:topmc_proc_entry

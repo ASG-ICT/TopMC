@@ -1,0 +1,1576 @@
+
+topmc_mod.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <topmc_enable_all_read>:
+	.read = topmc_cr4_pce_read,
+	.write = topmc_cr4_pce_write,
+};
+
+int topmc_enable_all_read(char *page, char **start, off_t off, int count, int *eof, void *data)
+{
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	e8 00 00 00 00       	callq  9 <topmc_enable_all_read+0x9>
+	if(model->topmc_enable_all_read != NULL)
+   9:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 10 <topmc_enable_all_read+0x10>
+  10:	4c 8b 50 30          	mov    0x30(%rax),%r10
+  14:	31 c0                	xor    %eax,%eax
+  16:	4d 85 d2             	test   %r10,%r10
+  19:	74 03                	je     1e <topmc_enable_all_read+0x1e>
+		return model->topmc_enable_all_read(page, start, off, count, eof, data);
+  1b:	41 ff d2             	callq  *%r10
+	else
+		return 0;
+}
+  1e:	c9                   	leaveq 
+  1f:	c3                   	retq   
+
+0000000000000020 <topmc_enable_all_write>:
+
+int topmc_enable_all_write(struct file *file, const char __user * buffer, unsigned long count, void * data)
+{
+  20:	55                   	push   %rbp
+  21:	48 89 e5             	mov    %rsp,%rbp
+  24:	e8 00 00 00 00       	callq  29 <topmc_enable_all_write+0x9>
+	if(model->topmc_enable_all_write != NULL) 
+  29:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 30 <topmc_enable_all_write+0x10>
+  30:	4c 8b 40 38          	mov    0x38(%rax),%r8
+  34:	31 c0                	xor    %eax,%eax
+  36:	4d 85 c0             	test   %r8,%r8
+  39:	74 03                	je     3e <topmc_enable_all_write+0x1e>
+		return model->topmc_enable_all_write(file, buffer, count, data);
+  3b:	41 ff d0             	callq  *%r8
+	else
+		return 0;
+}
+  3e:	c9                   	leaveq 
+  3f:	c3                   	retq   
+
+0000000000000040 <topmc_enable_read>:
+	.read = topmc_enable_all_read,
+	.write = topmc_enable_all_write,
+};
+
+int topmc_enable_read(char *page, char **start, off_t off, int count, int *eof, void *data)
+{
+  40:	55                   	push   %rbp
+  41:	48 89 e5             	mov    %rsp,%rbp
+  44:	e8 00 00 00 00       	callq  49 <topmc_enable_read+0x9>
+	return model->topmc_enable_read(page, start, off, count,eof,data); 
+  49:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 50 <topmc_enable_read+0x10>
+  50:	ff 50 40             	callq  *0x40(%rax)
+}
+  53:	c9                   	leaveq 
+  54:	c3                   	retq   
+  55:	66 66 2e 0f 1f 84 00 	data32 nopw %cs:0x0(%rax,%rax,1)
+  5c:	00 00 00 00 
+
+0000000000000060 <topmc_enable_write>:
+
+
+int topmc_enable_write(struct file *file, const char __user * buffer, unsigned long count, void * data)
+{
+  60:	55                   	push   %rbp
+  61:	48 89 e5             	mov    %rsp,%rbp
+  64:	e8 00 00 00 00       	callq  69 <topmc_enable_write+0x9>
+	return model->topmc_enable_write(file, buffer, count, data); 
+  69:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 70 <topmc_enable_write+0x10>
+  70:	ff 50 48             	callq  *0x48(%rax)
+}
+  73:	c9                   	leaveq 
+  74:	c3                   	retq   
+  75:	66 66 2e 0f 1f 84 00 	data32 nopw %cs:0x0(%rax,%rax,1)
+  7c:	00 00 00 00 
+
+0000000000000080 <topmc_event_read>:
+unit---MUST BE two numbers
+kernel/user---MUST BE one of the following number: 0-"neither",1-"only user",2-"only kernel",3-"both"
+
+*/
+int topmc_event_read(char *page, char **start, off_t off, int count, int *eof, void *data)
+{
+  80:	55                   	push   %rbp
+  81:	48 89 e5             	mov    %rsp,%rbp
+  84:	e8 00 00 00 00       	callq  89 <topmc_event_read+0x9>
+	return model->topmc_event_read(page, start, off, count, eof, data); 
+  89:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 90 <topmc_event_read+0x10>
+  90:	ff 50 50             	callq  *0x50(%rax)
+}
+  93:	c9                   	leaveq 
+  94:	c3                   	retq   
+  95:	66 66 2e 0f 1f 84 00 	data32 nopw %cs:0x0(%rax,%rax,1)
+  9c:	00 00 00 00 
+
+00000000000000a0 <topmc_event_write>:
+
+int topmc_event_write(struct file *file, const char __user * buffer, unsigned long count, void * data)
+{
+  a0:	55                   	push   %rbp
+  a1:	48 89 e5             	mov    %rsp,%rbp
+  a4:	e8 00 00 00 00       	callq  a9 <topmc_event_write+0x9>
+	return model->topmc_event_write(file, buffer, count, data); 
+  a9:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # b0 <topmc_event_write+0x10>
+  b0:	ff 50 58             	callq  *0x58(%rax)
+}
+  b3:	c9                   	leaveq 
+  b4:	c3                   	retq   
+  b5:	66 66 2e 0f 1f 84 00 	data32 nopw %cs:0x0(%rax,%rax,1)
+  bc:	00 00 00 00 
+
+00000000000000c0 <topmc_value_read_callable_impl>:
+};
+
+
+#ifdef TOPMC_PER_SECOND
+u64 topmc_value_read_callable_impl(unsigned short cpu, unsigned short counter)
+{
+  c0:	55                   	push   %rbp
+  c1:	48 89 e5             	mov    %rsp,%rbp
+  c4:	e8 00 00 00 00       	callq  c9 <topmc_value_read_callable_impl+0x9>
+	return model->topmc_value_read_callable_impl(cpu, counter); 
+  c9:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # d0 <topmc_value_read_callable_impl+0x10>
+  d0:	0f b7 f6             	movzwl %si,%esi
+  d3:	0f b7 ff             	movzwl %di,%edi
+  d6:	ff 50 60             	callq  *0x60(%rax)
+}
+  d9:	c9                   	leaveq 
+  da:	c3                   	retq   
+  db:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000000e0 <topmc_value_read>:
+
+#endif
+
+int topmc_value_read(char *page, char **start, off_t off, int count, int *eof, void *data)
+{
+  e0:	55                   	push   %rbp
+  e1:	48 89 e5             	mov    %rsp,%rbp
+  e4:	e8 00 00 00 00       	callq  e9 <topmc_value_read+0x9>
+	return model->topmc_value_read(page, start, off, count, eof, data); 
+  e9:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # f0 <topmc_value_read+0x10>
+  f0:	ff 50 68             	callq  *0x68(%rax)
+}
+  f3:	c9                   	leaveq 
+  f4:	c3                   	retq   
+  f5:	66 66 2e 0f 1f 84 00 	data32 nopw %cs:0x0(%rax,%rax,1)
+  fc:	00 00 00 00 
+
+0000000000000100 <topmc_value_write>:
+
+int topmc_value_write(struct file *file, const char __user * buffer, unsigned long count, void * data)
+{
+ 100:	55                   	push   %rbp
+ 101:	48 89 e5             	mov    %rsp,%rbp
+ 104:	e8 00 00 00 00       	callq  109 <topmc_value_write+0x9>
+	return model->topmc_value_write(file, buffer, count, data); 
+ 109:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 110 <topmc_value_write+0x10>
+ 110:	ff 50 70             	callq  *0x70(%rax)
+}
+ 113:	c9                   	leaveq 
+ 114:	c3                   	retq   
+ 115:	66 66 2e 0f 1f 84 00 	data32 nopw %cs:0x0(%rax,%rax,1)
+ 11c:	00 00 00 00 
+
+0000000000000120 <topmc_msr_init>:
+	.read = topmc_value_read,
+	.write = topmc_value_write,
+};
+
+void topmc_msr_init(void)
+{
+ 120:	55                   	push   %rbp
+ 121:	48 89 e5             	mov    %rsp,%rbp
+ 124:	e8 00 00 00 00       	callq  129 <topmc_msr_init+0x9>
+	model->topmc_msr_init();
+ 129:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 130 <topmc_msr_init+0x10>
+ 130:	ff 10                	callq  *(%rax)
+}
+ 132:	c9                   	leaveq 
+ 133:	c3                   	retq   
+ 134:	66 66 66 2e 0f 1f 84 	data32 data32 nopw %cs:0x0(%rax,%rax,1)
+ 13b:	00 00 00 00 00 
+
+0000000000000140 <topmc_core_global_ctrl_init>:
+
+void topmc_core_global_ctrl_init(void)
+{
+ 140:	55                   	push   %rbp
+ 141:	48 89 e5             	mov    %rsp,%rbp
+ 144:	e8 00 00 00 00       	callq  149 <topmc_core_global_ctrl_init+0x9>
+	if(model->is_exist_topmc_core_global_ctrl_init)
+ 149:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 150 <topmc_core_global_ctrl_init+0x10>
+ 150:	80 78 08 00          	cmpb   $0x0,0x8(%rax)
+ 154:	75 0a                	jne    160 <topmc_core_global_ctrl_init+0x20>
+		model->topmc_core_global_ctrl_init();
+	return;
+}
+ 156:	c9                   	leaveq 
+ 157:	c3                   	retq   
+ 158:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 15f:	00 
+}
+
+void topmc_core_global_ctrl_init(void)
+{
+	if(model->is_exist_topmc_core_global_ctrl_init)
+		model->topmc_core_global_ctrl_init();
+ 160:	ff 50 10             	callq  *0x10(%rax)
+	return;
+}
+ 163:	c9                   	leaveq 
+ 164:	c3                   	retq   
+ 165:	66 66 2e 0f 1f 84 00 	data32 nopw %cs:0x0(%rax,%rax,1)
+ 16c:	00 00 00 00 
+
+0000000000000170 <topmc_uncore_global_ctrl_init>:
+
+/* initialization uncore global msrs*/
+void topmc_uncore_global_ctrl_init(void)
+{
+ 170:	55                   	push   %rbp
+ 171:	48 89 e5             	mov    %rsp,%rbp
+ 174:	e8 00 00 00 00       	callq  179 <topmc_uncore_global_ctrl_init+0x9>
+	if(model->is_exist_topmc_uncore_global_ctrl_init)
+ 179:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 180 <topmc_uncore_global_ctrl_init+0x10>
+ 180:	80 78 18 00          	cmpb   $0x0,0x18(%rax)
+ 184:	75 0a                	jne    190 <topmc_uncore_global_ctrl_init+0x20>
+		model->topmc_uncore_global_ctrl_init();
+	return;
+}
+ 186:	c9                   	leaveq 
+ 187:	c3                   	retq   
+ 188:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 18f:	00 
+
+/* initialization uncore global msrs*/
+void topmc_uncore_global_ctrl_init(void)
+{
+	if(model->is_exist_topmc_uncore_global_ctrl_init)
+		model->topmc_uncore_global_ctrl_init();
+ 190:	ff 50 20             	callq  *0x20(%rax)
+	return;
+}
+ 193:	c9                   	leaveq 
+ 194:	c3                   	retq   
+ 195:	66 66 2e 0f 1f 84 00 	data32 nopw %cs:0x0(%rax,%rax,1)
+ 19c:	00 00 00 00 
+
+00000000000001a0 <topmc_model_detect>:
+	}
+
+}
+
+int topmc_model_detect(void)
+{
+ 1a0:	55                   	push   %rbp
+ 1a1:	48 89 e5             	mov    %rsp,%rbp
+ 1a4:	48 83 ec 30          	sub    $0x30,%rsp
+ 1a8:	48 89 5d e0          	mov    %rbx,-0x20(%rbp)
+ 1ac:	4c 89 65 e8          	mov    %r12,-0x18(%rbp)
+ 1b0:	4c 89 6d f0          	mov    %r13,-0x10(%rbp)
+ 1b4:	4c 89 75 f8          	mov    %r14,-0x8(%rbp)
+ 1b8:	e8 00 00 00 00       	callq  1bd <topmc_model_detect+0x1d>
+}
+
+static __always_inline int constant_test_bit(long nr, const volatile unsigned long *addr)
+{
+	return ((1UL << (nr & (BITS_PER_LONG-1))) &
+		(addr[nr >> _BITOPS_LONG_SHIFT])) != 0;
+ 1bd:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 1c4 <topmc_model_detect+0x24>
+	__u8 vendor = boot_cpu_data.x86_vendor;
+ 1c4:	44 0f b6 2d 00 00 00 	movzbl 0x0(%rip),%r13d        # 1cc <topmc_model_detect+0x2c>
+ 1cb:	00 
+	__u8 family = boot_cpu_data.x86;
+ 1cc:	44 0f b6 25 00 00 00 	movzbl 0x0(%rip),%r12d        # 1d4 <topmc_model_detect+0x34>
+ 1d3:	00 
+	__u8 cpu_model = /*current_cpu_data*/boot_cpu_data.x86_model;
+ 1d4:	0f b6 0d 00 00 00 00 	movzbl 0x0(%rip),%ecx        # 1db <topmc_model_detect+0x3b>
+
+	if(!cpu_has_apic)
+ 1db:	f6 c4 02             	test   $0x2,%ah
+ 1de:	75 17                	jne    1f7 <topmc_model_detect+0x57>
+ 1e0:	b8 ed ff ff ff       	mov    $0xffffffed,%eax
+	default:
+		printk("topmc->topmc_model_detect(): vendor %d not supported.\n", vendor);
+		return 0;
+	}
+	return 1;
+}
+ 1e5:	48 8b 5d e0          	mov    -0x20(%rbp),%rbx
+ 1e9:	4c 8b 65 e8          	mov    -0x18(%rbp),%r12
+ 1ed:	4c 8b 6d f0          	mov    -0x10(%rbp),%r13
+ 1f1:	4c 8b 75 f8          	mov    -0x8(%rbp),%r14
+ 1f5:	c9                   	leaveq 
+ 1f6:	c3                   	retq   
+	__u8 family = boot_cpu_data.x86;
+	__u8 cpu_model = /*current_cpu_data*/boot_cpu_data.x86_model;
+
+	if(!cpu_has_apic)
+		return -ENODEV;
+	printk("topmc->topmc_model_detect(): vendor:%d, family: %d.\n", vendor, family);
+ 1f7:	41 0f b6 dc          	movzbl %r12b,%ebx
+ 1fb:	45 0f b6 f5          	movzbl %r13b,%r14d
+ 1ff:	31 c0                	xor    %eax,%eax
+ 201:	89 da                	mov    %ebx,%edx
+ 203:	44 89 f6             	mov    %r14d,%esi
+ 206:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 20d:	88 4d d8             	mov    %cl,-0x28(%rbp)
+ 210:	e8 00 00 00 00       	callq  215 <topmc_model_detect+0x75>
+	switch(vendor) {
+ 215:	45 84 ed             	test   %r13b,%r13b
+ 218:	0f b6 4d d8          	movzbl -0x28(%rbp),%ecx
+ 21c:	75 1a                	jne    238 <topmc_model_detect+0x98>
+			break;
+		}
+		break;
+	
+	case X86_VENDOR_INTEL:
+		switch(family) {
+ 21e:	41 80 fc 06          	cmp    $0x6,%r12b
+ 222:	74 2f                	je     253 <topmc_model_detect+0xb3>
+			        default:
+			            printk("topmc->topmc_model_detect(): family of intel %d  model %d not supported.\n", family,cpu_model);
+			            return 0;
+			}
+		default:
+			printk("topmc->topmc_model_detect(): family of intel %d not supported.\n", family);
+ 224:	89 de                	mov    %ebx,%esi
+ 226:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 22d:	31 c0                	xor    %eax,%eax
+ 22f:	e8 00 00 00 00       	callq  234 <topmc_model_detect+0x94>
+ 234:	31 c0                	xor    %eax,%eax
+			return 0;
+ 236:	eb ad                	jmp    1e5 <topmc_model_detect+0x45>
+	__u8 cpu_model = /*current_cpu_data*/boot_cpu_data.x86_model;
+
+	if(!cpu_has_apic)
+		return -ENODEV;
+	printk("topmc->topmc_model_detect(): vendor:%d, family: %d.\n", vendor, family);
+	switch(vendor) {
+ 238:	41 80 fd 02          	cmp    $0x2,%r13b
+ 23c:	74 59                	je     297 <topmc_model_detect+0xf7>
+			printk("topmc->topmc_model_detect(): family of intel %d not supported.\n", family);
+			return 0;
+		}
+		break;
+	default:
+		printk("topmc->topmc_model_detect(): vendor %d not supported.\n", vendor);
+ 23e:	44 89 f6             	mov    %r14d,%esi
+ 241:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 248:	31 c0                	xor    %eax,%eax
+ 24a:	e8 00 00 00 00       	callq  24f <topmc_model_detect+0xaf>
+ 24f:	31 c0                	xor    %eax,%eax
+		return 0;
+ 251:	eb 92                	jmp    1e5 <topmc_model_detect+0x45>
+		break;
+	
+	case X86_VENDOR_INTEL:
+		switch(family) {
+		case 6:
+			switch(cpu_model)
+ 253:	80 f9 3e             	cmp    $0x3e,%cl
+ 256:	77 6a                	ja     2c2 <topmc_model_detect+0x122>
+ 258:	b8 01 00 00 00       	mov    $0x1,%eax
+ 25d:	48 ba 00 04 00 04 00 	mov    $0x4000000004000400,%rdx
+ 264:	00 00 40 
+ 267:	48 d3 e0             	shl    %cl,%rax
+ 26a:	48 85 d0             	test   %rdx,%rax
+ 26d:	74 53                	je     2c2 <topmc_model_detect+0x122>
+			{
+				case 10:
+				case 26:
+				case 62:
+					model = &topmc_op_intel_nehelam;
+					printk("topmc->topmc_model_detect(): family:intel %d  model %d.\n", family,cpu_model);
+ 26f:	0f b6 d1             	movzbl %cl,%edx
+ 272:	89 de                	mov    %ebx,%esi
+ 274:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 27b:	31 c0                	xor    %eax,%eax
+			switch(cpu_model)
+			{
+				case 10:
+				case 26:
+				case 62:
+					model = &topmc_op_intel_nehelam;
+ 27d:	48 c7 05 00 00 00 00 	movq   $0x0,0x0(%rip)        # 288 <topmc_model_detect+0xe8>
+ 284:	00 00 00 00 
+					printk("topmc->topmc_model_detect(): family:intel %d  model %d.\n", family,cpu_model);
+ 288:	e8 00 00 00 00       	callq  28d <topmc_model_detect+0xed>
+ 28d:	b8 01 00 00 00       	mov    $0x1,%eax
+					return 1;
+ 292:	e9 4e ff ff ff       	jmpq   1e5 <topmc_model_detect+0x45>
+	if(!cpu_has_apic)
+		return -ENODEV;
+	printk("topmc->topmc_model_detect(): vendor:%d, family: %d.\n", vendor, family);
+	switch(vendor) {
+	case X86_VENDOR_AMD:
+		switch(family) {
+ 297:	41 80 fc 10          	cmp    $0x10,%r12b
+ 29b:	74 3f                	je     2dc <topmc_model_detect+0x13c>
+			model = &topmc_op_amd;
+			printk("topmc->topmc_model_detect(): family: amd/6.\n");
+			break;
+		default:
+			model = &topmc_op_amd;
+			printk("topmc->topmc_model_detect(): family of amd %d not supported, use dafault AMD topmc_module.\n", family);
+ 29d:	89 de                	mov    %ebx,%esi
+ 29f:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 2a6:	31 c0                	xor    %eax,%eax
+		case 16:
+			model = &topmc_op_amd;
+			printk("topmc->topmc_model_detect(): family: amd/6.\n");
+			break;
+		default:
+			model = &topmc_op_amd;
+ 2a8:	48 c7 05 00 00 00 00 	movq   $0x0,0x0(%rip)        # 2b3 <topmc_model_detect+0x113>
+ 2af:	00 00 00 00 
+			printk("topmc->topmc_model_detect(): family of amd %d not supported, use dafault AMD topmc_module.\n", family);
+ 2b3:	e8 00 00 00 00       	callq  2b8 <topmc_model_detect+0x118>
+ 2b8:	b8 01 00 00 00       	mov    $0x1,%eax
+ 2bd:	e9 23 ff ff ff       	jmpq   1e5 <topmc_model_detect+0x45>
+					model = &topmc_op_intel_nehelam;
+					printk("topmc->topmc_model_detect(): family:intel %d  model %d.\n", family,cpu_model);
+					return 1;
+					//return 0;
+			        default:
+			            printk("topmc->topmc_model_detect(): family of intel %d  model %d not supported.\n", family,cpu_model);
+ 2c2:	0f b6 d1             	movzbl %cl,%edx
+ 2c5:	89 de                	mov    %ebx,%esi
+ 2c7:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 2ce:	31 c0                	xor    %eax,%eax
+ 2d0:	e8 00 00 00 00       	callq  2d5 <topmc_model_detect+0x135>
+ 2d5:	31 c0                	xor    %eax,%eax
+			            return 0;
+ 2d7:	e9 09 ff ff ff       	jmpq   1e5 <topmc_model_detect+0x45>
+	switch(vendor) {
+	case X86_VENDOR_AMD:
+		switch(family) {
+		case 16:
+			model = &topmc_op_amd;
+			printk("topmc->topmc_model_detect(): family: amd/6.\n");
+ 2dc:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 2e3:	31 c0                	xor    %eax,%eax
+	printk("topmc->topmc_model_detect(): vendor:%d, family: %d.\n", vendor, family);
+	switch(vendor) {
+	case X86_VENDOR_AMD:
+		switch(family) {
+		case 16:
+			model = &topmc_op_amd;
+ 2e5:	48 c7 05 00 00 00 00 	movq   $0x0,0x0(%rip)        # 2f0 <topmc_model_detect+0x150>
+ 2ec:	00 00 00 00 
+			printk("topmc->topmc_model_detect(): family: amd/6.\n");
+ 2f0:	e8 00 00 00 00       	callq  2f5 <topmc_model_detect+0x155>
+ 2f5:	b8 01 00 00 00       	mov    $0x1,%eax
+			break;
+ 2fa:	e9 e6 fe ff ff       	jmpq   1e5 <topmc_model_detect+0x45>
+ 2ff:	90                   	nop
+
+0000000000000300 <topmc_proc_clean>:
+
+/* proc filesystem clean process: entry -> counter -> core -> topmc
+ */
+
+void topmc_proc_clean(void)
+{
+ 300:	55                   	push   %rbp
+ 301:	48 89 e5             	mov    %rsp,%rbp
+ 304:	41 57                	push   %r15
+ 306:	41 56                	push   %r14
+ 308:	41 55                	push   %r13
+ 30a:	41 54                	push   %r12
+ 30c:	53                   	push   %rbx
+ 30d:	48 83 ec 38          	sub    $0x38,%rsp
+ 311:	e8 00 00 00 00       	callq  316 <topmc_proc_clean+0x16>
+ 316:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+ 31d:	00 00 
+ 31f:	48 89 45 c8          	mov    %rax,-0x38(%rbp)
+ 323:	31 c0                	xor    %eax,%eax
+
+	//int i;
+	int cpu,counter;
+	char namebuf[TOPMC_MAX_NAMELEN];
+
+	if(enable_entry) {
+ 325:	48 83 3d 00 00 00 00 	cmpq   $0x0,0x0(%rip)        # 32d <topmc_proc_clean+0x2d>
+ 32c:	00 
+ 32d:	74 1e                	je     34d <topmc_proc_clean+0x4d>
+		remove_proc_entry("enable_all",root_dir);
+ 32f:	48 8b 35 00 00 00 00 	mov    0x0(%rip),%rsi        # 336 <topmc_proc_clean+0x36>
+ 336:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 33d:	e8 00 00 00 00       	callq  342 <topmc_proc_clean+0x42>
+		enable_entry = NULL;
+ 342:	48 c7 05 00 00 00 00 	movq   $0x0,0x0(%rip)        # 34d <topmc_proc_clean+0x4d>
+ 349:	00 00 00 00 
+	}
+
+    if(enable_all_cr4_pce_entry) {
+ 34d:	48 83 3d 00 00 00 00 	cmpq   $0x0,0x0(%rip)        # 355 <topmc_proc_clean+0x55>
+ 354:	00 
+ 355:	74 1e                	je     375 <topmc_proc_clean+0x75>
+        remove_proc_entry("enable_cr4_pce", root_dir);
+ 357:	48 8b 35 00 00 00 00 	mov    0x0(%rip),%rsi        # 35e <topmc_proc_clean+0x5e>
+ 35e:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 365:	e8 00 00 00 00       	callq  36a <topmc_proc_clean+0x6a>
+        enable_all_cr4_pce_entry = NULL;
+ 36a:	48 c7 05 00 00 00 00 	movq   $0x0,0x0(%rip)        # 375 <topmc_proc_clean+0x75>
+ 371:	00 00 00 00 
+ 375:	8b 35 00 00 00 00    	mov    0x0(%rip),%esi        # 37b <topmc_proc_clean+0x7b>
+ 37b:	4c 8d 75 b0          	lea    -0x50(%rbp),%r14
+static inline unsigned int cpumask_next(int n, const struct cpumask *srcp)
+{
+	/* -1 is a legal arg here. */
+	if (n != -1)
+		cpumask_check(n);
+	return find_next_bit(cpumask_bits(srcp), nr_cpumask_bits, n+1);
+ 37f:	c7 45 ac ff ff ff ff 	movl   $0xffffffff,-0x54(%rbp)
+ 386:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+ 38d:	00 00 00 
+ 390:	8b 55 ac             	mov    -0x54(%rbp),%edx
+ 393:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 39a <topmc_proc_clean+0x9a>
+ 39a:	48 63 f6             	movslq %esi,%rsi
+ 39d:	83 c2 01             	add    $0x1,%edx
+ 3a0:	48 63 d2             	movslq %edx,%rdx
+ 3a3:	e8 00 00 00 00       	callq  3a8 <topmc_proc_clean+0xa8>
+    }
+
+	for_each_online_cpu(cpu){
+ 3a8:	8b 35 00 00 00 00    	mov    0x0(%rip),%esi        # 3ae <topmc_proc_clean+0xae>
+ 3ae:	89 45 ac             	mov    %eax,-0x54(%rbp)
+ 3b1:	39 f0                	cmp    %esi,%eax
+ 3b3:	0f 8d 90 01 00 00    	jge    549 <topmc_proc_clean+0x249>
+		if(core_dir[cpu]) {
+ 3b9:	4c 63 7d ac          	movslq -0x54(%rbp),%r15
+ 3bd:	4a 83 3c fd 00 00 00 	cmpq   $0x0,0x0(,%r15,8)
+ 3c4:	00 00 
+ 3c6:	74 c8                	je     390 <topmc_proc_clean+0x90>
+			for(counter=0;counter<model->num_counters_core + model->num_counters_uncore;counter++){
+ 3c8:	48 8b 15 00 00 00 00 	mov    0x0(%rip),%rdx        # 3cf <topmc_proc_clean+0xcf>
+ 3cf:	8b 42 2c             	mov    0x2c(%rdx),%eax
+ 3d2:	03 42 28             	add    0x28(%rdx),%eax
+ 3d5:	85 c0                	test   %eax,%eax
+ 3d7:	0f 8e 23 01 00 00    	jle    500 <topmc_proc_clean+0x200>
+ 3dd:	4b 8d 1c 7f          	lea    (%r15,%r15,2),%rbx
+ 3e1:	4d 89 fc             	mov    %r15,%r12
+ 3e4:	45 31 ed             	xor    %r13d,%r13d
+ 3e7:	49 c1 e4 08          	shl    $0x8,%r12
+ 3eb:	48 c1 e3 08          	shl    $0x8,%rbx
+ 3ef:	49 81 c4 00 00 00 00 	add    $0x0,%r12
+ 3f6:	48 81 c3 00 00 00 00 	add    $0x0,%rbx
+ 3fd:	eb 53                	jmp    452 <topmc_proc_clean+0x152>
+ 3ff:	90                   	nop
+					memset(namebuf,0,TOPMC_MAX_NAMELEN);
+					if( counter < model->num_counters_core) {
+						sprintf(namebuf,"incore_counter%d",counter);
+					}
+					if( counter >= model->num_counters_core) {
+						sprintf(namebuf, "uncore_counter%d",counter- model->num_counters_core);
+ 400:	44 89 e8             	mov    %r13d,%eax
+ 403:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+ 40a:	4c 89 f7             	mov    %r14,%rdi
+ 40d:	29 d0                	sub    %edx,%eax
+ 40f:	89 c2                	mov    %eax,%edx
+ 411:	31 c0                	xor    %eax,%eax
+ 413:	e8 00 00 00 00       	callq  418 <topmc_proc_clean+0x118>
+					}
+					remove_proc_entry(namebuf,core_dir[cpu]);
+ 418:	4a 8b 34 fd 00 00 00 	mov    0x0(,%r15,8),%rsi
+ 41f:	00 
+ 420:	4c 89 f7             	mov    %r14,%rdi
+ 423:	e8 00 00 00 00       	callq  428 <topmc_proc_clean+0x128>
+ 428:	48 8b 15 00 00 00 00 	mov    0x0(%rip),%rdx        # 42f <topmc_proc_clean+0x12f>
+					counter_dir[cpu][counter] = NULL;
+ 42f:	49 c7 04 24 00 00 00 	movq   $0x0,(%r12)
+ 436:	00 
+        enable_all_cr4_pce_entry = NULL;
+    }
+
+	for_each_online_cpu(cpu){
+		if(core_dir[cpu]) {
+			for(counter=0;counter<model->num_counters_core + model->num_counters_uncore;counter++){
+ 437:	8b 42 2c             	mov    0x2c(%rdx),%eax
+ 43a:	03 42 28             	add    0x28(%rdx),%eax
+ 43d:	41 83 c5 01          	add    $0x1,%r13d
+ 441:	49 83 c4 08          	add    $0x8,%r12
+ 445:	48 83 c3 18          	add    $0x18,%rbx
+ 449:	44 39 e8             	cmp    %r13d,%eax
+ 44c:	0f 8e ae 00 00 00    	jle    500 <topmc_proc_clean+0x200>
+				if(counter_dir[cpu][counter]) {
+ 452:	49 8b 34 24          	mov    (%r12),%rsi
+ 456:	48 85 f6             	test   %rsi,%rsi
+ 459:	74 dc                	je     437 <topmc_proc_clean+0x137>
+					if(entry[cpu][counter][0]) {
+ 45b:	48 83 7b f0 00       	cmpq   $0x0,-0x10(%rbx)
+ 460:	74 14                	je     476 <topmc_proc_clean+0x176>
+						remove_proc_entry("enable",counter_dir[cpu][counter]); 
+ 462:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 469:	e8 00 00 00 00       	callq  46e <topmc_proc_clean+0x16e>
+						entry[cpu][counter][0]=NULL;
+ 46e:	48 c7 43 f0 00 00 00 	movq   $0x0,-0x10(%rbx)
+ 475:	00 
+					}
+					if(entry[cpu][counter][1]) {
+ 476:	48 83 7b f8 00       	cmpq   $0x0,-0x8(%rbx)
+ 47b:	74 18                	je     495 <topmc_proc_clean+0x195>
+						remove_proc_entry("event",counter_dir[cpu][counter]); 
+ 47d:	49 8b 34 24          	mov    (%r12),%rsi
+ 481:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 488:	e8 00 00 00 00       	callq  48d <topmc_proc_clean+0x18d>
+						entry[cpu][counter][1]=NULL;
+ 48d:	48 c7 43 f8 00 00 00 	movq   $0x0,-0x8(%rbx)
+ 494:	00 
+					}
+					if(entry[cpu][counter][2]) {
+ 495:	48 83 3b 00          	cmpq   $0x0,(%rbx)
+ 499:	74 17                	je     4b2 <topmc_proc_clean+0x1b2>
+						remove_proc_entry("value",counter_dir[cpu][counter]); 
+ 49b:	49 8b 34 24          	mov    (%r12),%rsi
+ 49f:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 4a6:	e8 00 00 00 00       	callq  4ab <topmc_proc_clean+0x1ab>
+						entry[cpu][counter][2]=NULL;
+ 4ab:	48 c7 03 00 00 00 00 	movq   $0x0,(%rbx)
+					}
+					memset(namebuf,0,TOPMC_MAX_NAMELEN);
+					if( counter < model->num_counters_core) {
+ 4b2:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 4b9 <topmc_proc_clean+0x1b9>
+					}
+					if(entry[cpu][counter][2]) {
+						remove_proc_entry("value",counter_dir[cpu][counter]); 
+						entry[cpu][counter][2]=NULL;
+					}
+					memset(namebuf,0,TOPMC_MAX_NAMELEN);
+ 4b9:	49 c7 06 00 00 00 00 	movq   $0x0,(%r14)
+ 4c0:	49 c7 46 08 00 00 00 	movq   $0x0,0x8(%r14)
+ 4c7:	00 
+					if( counter < model->num_counters_core) {
+ 4c8:	8b 50 28             	mov    0x28(%rax),%edx
+ 4cb:	44 39 ea             	cmp    %r13d,%edx
+ 4ce:	0f 8e 2c ff ff ff    	jle    400 <topmc_proc_clean+0x100>
+						sprintf(namebuf,"incore_counter%d",counter);
+ 4d4:	44 89 ea             	mov    %r13d,%edx
+ 4d7:	31 c0                	xor    %eax,%eax
+ 4d9:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+ 4e0:	4c 89 f7             	mov    %r14,%rdi
+ 4e3:	e8 00 00 00 00       	callq  4e8 <topmc_proc_clean+0x1e8>
+					}
+					if( counter >= model->num_counters_core) {
+ 4e8:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 4ef <topmc_proc_clean+0x1ef>
+ 4ef:	8b 50 28             	mov    0x28(%rax),%edx
+ 4f2:	44 39 ea             	cmp    %r13d,%edx
+ 4f5:	0f 8f 1d ff ff ff    	jg     418 <topmc_proc_clean+0x118>
+ 4fb:	e9 00 ff ff ff       	jmpq   400 <topmc_proc_clean+0x100>
+					remove_proc_entry(namebuf,core_dir[cpu]);
+					counter_dir[cpu][counter] = NULL;
+				}
+			}
+			memset(namebuf,0,TOPMC_MAX_NAMELEN);	
+			sprintf(namebuf,"core%02d",cpu);
+ 500:	8b 55 ac             	mov    -0x54(%rbp),%edx
+ 503:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+ 50a:	4c 89 f7             	mov    %r14,%rdi
+					}
+					remove_proc_entry(namebuf,core_dir[cpu]);
+					counter_dir[cpu][counter] = NULL;
+				}
+			}
+			memset(namebuf,0,TOPMC_MAX_NAMELEN);	
+ 50d:	49 c7 06 00 00 00 00 	movq   $0x0,(%r14)
+ 514:	49 c7 46 08 00 00 00 	movq   $0x0,0x8(%r14)
+ 51b:	00 
+			sprintf(namebuf,"core%02d",cpu);
+ 51c:	31 c0                	xor    %eax,%eax
+ 51e:	e8 00 00 00 00       	callq  523 <topmc_proc_clean+0x223>
+			remove_proc_entry(namebuf,root_dir);
+ 523:	48 8b 35 00 00 00 00 	mov    0x0(%rip),%rsi        # 52a <topmc_proc_clean+0x22a>
+ 52a:	4c 89 f7             	mov    %r14,%rdi
+ 52d:	e8 00 00 00 00       	callq  532 <topmc_proc_clean+0x232>
+			core_dir[cpu]=NULL;
+ 532:	4a c7 04 fd 00 00 00 	movq   $0x0,0x0(,%r15,8)
+ 539:	00 00 00 00 00 
+ 53e:	8b 35 00 00 00 00    	mov    0x0(%rip),%esi        # 544 <topmc_proc_clean+0x244>
+ 544:	e9 47 fe ff ff       	jmpq   390 <topmc_proc_clean+0x90>
+		} 
+	}
+
+	if(root_dir) {
+ 549:	48 83 3d 00 00 00 00 	cmpq   $0x0,0x0(%rip)        # 551 <topmc_proc_clean+0x251>
+ 550:	00 
+ 551:	74 19                	je     56c <topmc_proc_clean+0x26c>
+		remove_proc_entry("topmc",NULL);
+ 553:	31 f6                	xor    %esi,%esi
+ 555:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 55c:	e8 00 00 00 00       	callq  561 <topmc_proc_clean+0x261>
+		root_dir = NULL;
+ 561:	48 c7 05 00 00 00 00 	movq   $0x0,0x0(%rip)        # 56c <topmc_proc_clean+0x26c>
+ 568:	00 00 00 00 
+	}
+
+}
+ 56c:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+ 570:	65 48 33 04 25 28 00 	xor    %gs:0x28,%rax
+ 577:	00 00 
+ 579:	75 0f                	jne    58a <topmc_proc_clean+0x28a>
+ 57b:	48 83 c4 38          	add    $0x38,%rsp
+ 57f:	5b                   	pop    %rbx
+ 580:	41 5c                	pop    %r12
+ 582:	41 5d                	pop    %r13
+ 584:	41 5e                	pop    %r14
+ 586:	41 5f                	pop    %r15
+ 588:	c9                   	leaveq 
+ 589:	c3                   	retq   
+ 58a:	e8 00 00 00 00       	callq  58f <topmc_proc_clean+0x28f>
+ 58f:	90                   	nop
+
+0000000000000590 <init_module>:
+ *                      
+ *topmc->core*->counter*->entry
+ *
+ **/
+int topmc_init(void)
+{
+ 590:	55                   	push   %rbp
+ 591:	48 89 e5             	mov    %rsp,%rbp
+ 594:	48 81 ec 90 00 00 00 	sub    $0x90,%rsp
+ 59b:	48 89 5d d8          	mov    %rbx,-0x28(%rbp)
+ 59f:	4c 89 65 e0          	mov    %r12,-0x20(%rbp)
+ 5a3:	4c 89 6d e8          	mov    %r13,-0x18(%rbp)
+ 5a7:	4c 89 75 f0          	mov    %r14,-0x10(%rbp)
+ 5ab:	4c 89 7d f8          	mov    %r15,-0x8(%rbp)
+ 5af:	e8 00 00 00 00       	callq  5b4 <init_module+0x24>
+    int ret = 0;
+    int cpu,counter;
+    char namebuf[TOPMC_MAX_NAMELEN];
+
+    printk("+->topmc_init() start...\n");
+ 5b4:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ *                      
+ *topmc->core*->counter*->entry
+ *
+ **/
+int topmc_init(void)
+{
+ 5bb:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+ 5c2:	00 00 
+ 5c4:	48 89 45 c8          	mov    %rax,-0x38(%rbp)
+ 5c8:	31 c0                	xor    %eax,%eax
+    int ret = 0;
+    int cpu,counter;
+    char namebuf[TOPMC_MAX_NAMELEN];
+
+    printk("+->topmc_init() start...\n");
+ 5ca:	e8 00 00 00 00       	callq  5cf <init_module+0x3f>
+
+    topmc_model_detect();
+ 5cf:	e8 00 00 00 00       	callq  5d4 <init_module+0x44>
+    if(!model)
+ 5d4:	48 83 3d 00 00 00 00 	cmpq   $0x0,0x0(%rip)        # 5dc <init_module+0x4c>
+ 5db:	00 
+ 5dc:	0f 84 5f 03 00 00    	je     941 <init_module+0x3b1>
+    {
+        printk("The processor is not supported yet.\n");
+        return ret;
+    }
+    topmc_core_global_ctrl_init();
+ 5e2:	e8 00 00 00 00       	callq  5e7 <init_module+0x57>
+    topmc_uncore_global_ctrl_init();
+ 5e7:	e8 00 00 00 00       	callq  5ec <init_module+0x5c>
+	.write = topmc_value_write,
+};
+
+void topmc_msr_init(void)
+{
+	model->topmc_msr_init();
+ 5ec:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 5f3 <init_module+0x63>
+ 5f3:	ff 10                	callq  *(%rax)
+    }
+    topmc_core_global_ctrl_init();
+    topmc_uncore_global_ctrl_init();
+    topmc_msr_init();
+
+    memset(topmc_procs,0,sizeof(topmc_procs));
+ 5f5:	31 f6                	xor    %esi,%esi
+ 5f7:	ba 00 00 20 00       	mov    $0x200000,%edx
+ 5fc:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 603:	e8 00 00 00 00       	callq  608 <init_module+0x78>
+
+    root_dir        = proc_mkdir("topmc",NULL);
+ 608:	31 f6                	xor    %esi,%esi
+ 60a:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 611:	e8 00 00 00 00       	callq  616 <init_module+0x86>
+    if(!root_dir){
+ 616:	48 85 c0             	test   %rax,%rax
+    topmc_uncore_global_ctrl_init();
+    topmc_msr_init();
+
+    memset(topmc_procs,0,sizeof(topmc_procs));
+
+    root_dir        = proc_mkdir("topmc",NULL);
+ 619:	48 89 05 00 00 00 00 	mov    %rax,0x0(%rip)        # 620 <init_module+0x90>
+    if(!root_dir){
+ 620:	0f 84 05 03 00 00    	je     92b <init_module+0x39b>
+        ret = -ENOMEM;
+        return ret;
+    }
+
+
+    enable_all_cr4_pce_entry = proc_create_data("enable_cr4_pce", 0666, root_dir, &topmc_cr4_pce_fops, &enable_all_cr4_pce);
+ 626:	49 c7 c0 00 00 00 00 	mov    $0x0,%r8
+ 62d:	48 c7 c1 00 00 00 00 	mov    $0x0,%rcx
+ 634:	48 89 c2             	mov    %rax,%rdx
+ 637:	be b6 01 00 00       	mov    $0x1b6,%esi
+ 63c:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 643:	e8 00 00 00 00       	callq  648 <init_module+0xb8>
+	//enable_all_cr4_pce_entry = create_proc_entry("enable_cr4_pce", 0666, root_dir);
+    if(enable_all_cr4_pce_entry == NULL) {
+ 648:	48 85 c0             	test   %rax,%rax
+        ret = -ENOMEM;
+        return ret;
+    }
+
+
+    enable_all_cr4_pce_entry = proc_create_data("enable_cr4_pce", 0666, root_dir, &topmc_cr4_pce_fops, &enable_all_cr4_pce);
+ 64b:	48 89 05 00 00 00 00 	mov    %rax,0x0(%rip)        # 652 <init_module+0xc2>
+	//enable_all_cr4_pce_entry = create_proc_entry("enable_cr4_pce", 0666, root_dir);
+    if(enable_all_cr4_pce_entry == NULL) {
+ 652:	0f 84 ad 02 00 00    	je     905 <init_module+0x375>
+        enable_all_cr4_pce_entry->read_proc  = topmc_cr4_pce_read;
+        enable_all_cr4_pce_entry->write_proc = topmc_cr4_pce_write;
+    }
+#endif
+
+    enable_entry   = proc_create_data("enable_all",0666,root_dir, &topmc_enable_all_fops, NULL);
+ 658:	48 8b 15 00 00 00 00 	mov    0x0(%rip),%rdx        # 65f <init_module+0xcf>
+ 65f:	45 31 c0             	xor    %r8d,%r8d
+ 662:	48 c7 c1 00 00 00 00 	mov    $0x0,%rcx
+ 669:	be b6 01 00 00       	mov    $0x1b6,%esi
+ 66e:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 675:	e8 00 00 00 00       	callq  67a <init_module+0xea>
+	//enable_entry   = create_proc_entry("enable_all",0666,root_dir);
+    if(enable_entry == NULL){
+ 67a:	48 85 c0             	test   %rax,%rax
+        enable_all_cr4_pce_entry->read_proc  = topmc_cr4_pce_read;
+        enable_all_cr4_pce_entry->write_proc = topmc_cr4_pce_write;
+    }
+#endif
+
+    enable_entry   = proc_create_data("enable_all",0666,root_dir, &topmc_enable_all_fops, NULL);
+ 67d:	48 89 05 00 00 00 00 	mov    %rax,0x0(%rip)        # 684 <init_module+0xf4>
+	//enable_entry   = create_proc_entry("enable_all",0666,root_dir);
+    if(enable_entry == NULL){
+ 684:	0f 84 55 02 00 00    	je     8df <init_module+0x34f>
+ 68a:	4c 8b 3d 00 00 00 00 	mov    0x0(%rip),%r15        # 691 <init_module+0x101>
+        enable_entry->write_proc       = topmc_enable_all_write;
+    }
+#endif
+    for_each_online_cpu(cpu){
+        printk("+->topmc_init(): cpu:%d\n",cpu);
+        memset(namebuf,0,TOPMC_MAX_NAMELEN);
+ 691:	4c 8d 65 b0          	lea    -0x50(%rbp),%r12
+ 695:	bb ff ff ff ff       	mov    $0xffffffff,%ebx
+ 69a:	45 31 ed             	xor    %r13d,%r13d
+ 69d:	41 be 04 00 00 00    	mov    $0x4,%r14d
+ 6a3:	48 63 35 00 00 00 00 	movslq 0x0(%rip),%rsi        # 6aa <init_module+0x11a>
+ 6aa:	83 c3 01             	add    $0x1,%ebx
+ 6ad:	4c 89 ff             	mov    %r15,%rdi
+ 6b0:	48 63 d3             	movslq %ebx,%rdx
+ 6b3:	e8 00 00 00 00       	callq  6b8 <init_module+0x128>
+	else {
+        enable_entry->read_proc        = topmc_enable_all_read;
+        enable_entry->write_proc       = topmc_enable_all_write;
+    }
+#endif
+    for_each_online_cpu(cpu){
+ 6b8:	3b 05 00 00 00 00    	cmp    0x0(%rip),%eax        # 6be <init_module+0x12e>
+ 6be:	48 89 c2             	mov    %rax,%rdx
+ 6c1:	89 c3                	mov    %eax,%ebx
+ 6c3:	7c 37                	jl     6fc <init_module+0x16c>
+        }
+    }
+
+//    topmc_enable_rdpmc();
+#ifdef TOPMC_PER_SECOND
+    topmc_value_read_callable = &topmc_value_read_callable_impl;
+ 6c5:	48 c7 05 00 00 00 00 	movq   $0x0,0x0(%rip)        # 6d0 <init_module+0x140>
+ 6cc:	00 00 00 00 
+ 6d0:	31 c0                	xor    %eax,%eax
+#endif
+
+    return ret;
+}
+ 6d2:	48 8b 55 c8          	mov    -0x38(%rbp),%rdx
+ 6d6:	65 48 33 14 25 28 00 	xor    %gs:0x28,%rdx
+ 6dd:	00 00 
+ 6df:	75 16                	jne    6f7 <init_module+0x167>
+ 6e1:	48 8b 5d d8          	mov    -0x28(%rbp),%rbx
+ 6e5:	4c 8b 65 e0          	mov    -0x20(%rbp),%r12
+ 6e9:	4c 8b 6d e8          	mov    -0x18(%rbp),%r13
+ 6ed:	4c 8b 75 f0          	mov    -0x10(%rbp),%r14
+ 6f1:	4c 8b 7d f8          	mov    -0x8(%rbp),%r15
+ 6f5:	c9                   	leaveq 
+ 6f6:	c3                   	retq   
+ 6f7:	e8 00 00 00 00       	callq  6fc <init_module+0x16c>
+        enable_entry->read_proc        = topmc_enable_all_read;
+        enable_entry->write_proc       = topmc_enable_all_write;
+    }
+#endif
+    for_each_online_cpu(cpu){
+        printk("+->topmc_init(): cpu:%d\n",cpu);
+ 6fc:	89 d6                	mov    %edx,%esi
+ 6fe:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 705:	31 c0                	xor    %eax,%eax
+ 707:	48 89 95 70 ff ff ff 	mov    %rdx,-0x90(%rbp)
+ 70e:	e8 00 00 00 00       	callq  713 <init_module+0x183>
+        memset(namebuf,0,TOPMC_MAX_NAMELEN);
+ 713:	44 89 e8             	mov    %r13d,%eax
+ 716:	4c 89 e7             	mov    %r12,%rdi
+ 719:	4c 89 f1             	mov    %r14,%rcx
+ 71c:	f3 ab                	rep stos %eax,%es:(%rdi)
+        sprintf(namebuf,"core%02d",cpu);
+ 71e:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+ 725:	4c 89 e7             	mov    %r12,%rdi
+ 728:	31 c0                	xor    %eax,%eax
+ 72a:	48 8b 95 70 ff ff ff 	mov    -0x90(%rbp),%rdx
+ 731:	e8 00 00 00 00       	callq  736 <init_module+0x1a6>
+        core_dir[cpu]        = proc_mkdir(namebuf,root_dir);
+ 736:	48 8b 35 00 00 00 00 	mov    0x0(%rip),%rsi        # 73d <init_module+0x1ad>
+ 73d:	4c 89 e7             	mov    %r12,%rdi
+ 740:	e8 00 00 00 00       	callq  745 <init_module+0x1b5>
+ 745:	48 63 d3             	movslq %ebx,%rdx
+        if(!core_dir[cpu]){
+ 748:	48 85 c0             	test   %rax,%rax
+#endif
+    for_each_online_cpu(cpu){
+        printk("+->topmc_init(): cpu:%d\n",cpu);
+        memset(namebuf,0,TOPMC_MAX_NAMELEN);
+        sprintf(namebuf,"core%02d",cpu);
+        core_dir[cpu]        = proc_mkdir(namebuf,root_dir);
+ 74b:	48 89 55 88          	mov    %rdx,-0x78(%rbp)
+ 74f:	48 89 04 d5 00 00 00 	mov    %rax,0x0(,%rdx,8)
+ 756:	00 
+        if(!core_dir[cpu]){
+ 757:	0f 84 61 02 00 00    	je     9be <init_module+0x42e>
+ 75d:	48 89 d0             	mov    %rdx,%rax
+ 760:	c7 45 ac 00 00 00 00 	movl   $0x0,-0x54(%rbp)
+ 767:	48 c1 e0 08          	shl    $0x8,%rax
+ 76b:	48 05 00 00 00 00    	add    $0x0,%rax
+ 771:	48 89 45 98          	mov    %rax,-0x68(%rbp)
+ 775:	48 89 d0             	mov    %rdx,%rax
+ 778:	48 c1 e0 07          	shl    $0x7,%rax
+ 77c:	48 05 00 00 00 00    	add    $0x0,%rax
+ 782:	48 89 45 a0          	mov    %rax,-0x60(%rbp)
+ 786:	48 6b c2 30          	imul   $0x30,%rdx,%rax
+                topmc_proc_clean();
+                ret = -ENOMEM;
+                return ret;
+            }
+
+            mix_cpu_counter[cpu][counter] = topmc_mix16to32((unsigned short)cpu, (unsigned short)counter);
+ 78a:	0f b7 d3             	movzwl %bx,%edx
+ 78d:	89 95 7c ff ff ff    	mov    %edx,-0x84(%rbp)
+    for_each_online_cpu(cpu){
+        printk("+->topmc_init(): cpu:%d\n",cpu);
+        memset(namebuf,0,TOPMC_MAX_NAMELEN);
+        sprintf(namebuf,"core%02d",cpu);
+        core_dir[cpu]        = proc_mkdir(namebuf,root_dir);
+        if(!core_dir[cpu]){
+ 793:	48 c1 e0 04          	shl    $0x4,%rax
+ 797:	48 05 00 00 00 00    	add    $0x0,%rax
+ 79d:	48 89 45 90          	mov    %rax,-0x70(%rbp)
+ 7a1:	48 8b 45 a0          	mov    -0x60(%rbp),%rax
+ 7a5:	48 89 45 80          	mov    %rax,-0x80(%rbp)
+            topmc_proc_clean();
+            ret = -ENOMEM;
+            return ret;
+        }
+
+        for(counter=0;counter<model->num_counters_core+model->num_counters_uncore;counter++){
+ 7a9:	48 8b 15 00 00 00 00 	mov    0x0(%rip),%rdx        # 7b0 <init_module+0x220>
+ 7b0:	8b 42 2c             	mov    0x2c(%rdx),%eax
+ 7b3:	03 42 28             	add    0x28(%rdx),%eax
+ 7b6:	39 45 ac             	cmp    %eax,-0x54(%rbp)
+ 7b9:	0f 8d e4 fe ff ff    	jge    6a3 <init_module+0x113>
+            memset(namebuf,0,TOPMC_MAX_NAMELEN);
+ 7bf:	44 89 e8             	mov    %r13d,%eax
+ 7c2:	4c 89 e7             	mov    %r12,%rdi
+ 7c5:	4c 89 f1             	mov    %r14,%rcx
+ 7c8:	f3 ab                	rep stos %eax,%es:(%rdi)
+            if( counter < model->num_counters_core) {
+ 7ca:	8b 42 28             	mov    0x28(%rdx),%eax
+ 7cd:	39 45 ac             	cmp    %eax,-0x54(%rbp)
+ 7d0:	0f 8c bc 01 00 00    	jl     992 <init_module+0x402>
+                sprintf(namebuf,"incore_counter%d",counter);
+            }
+            if( counter >= model->num_counters_core) {
+                sprintf(namebuf, "uncore_counter%d",counter- model->num_counters_core);
+ 7d6:	8b 55 ac             	mov    -0x54(%rbp),%edx
+ 7d9:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+ 7e0:	4c 89 e7             	mov    %r12,%rdi
+ 7e3:	29 c2                	sub    %eax,%edx
+ 7e5:	31 c0                	xor    %eax,%eax
+ 7e7:	e8 00 00 00 00       	callq  7ec <init_module+0x25c>
+            }
+            counter_dir[cpu][counter]        = proc_mkdir(namebuf,core_dir[cpu]);
+ 7ec:	48 8b 55 88          	mov    -0x78(%rbp),%rdx
+ 7f0:	4c 89 e7             	mov    %r12,%rdi
+ 7f3:	48 8b 34 d5 00 00 00 	mov    0x0(,%rdx,8),%rsi
+ 7fa:	00 
+ 7fb:	e8 00 00 00 00       	callq  800 <init_module+0x270>
+ 800:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+            if(!counter_dir[cpu][counter]){
+ 804:	48 85 c0             	test   %rax,%rax
+                sprintf(namebuf,"incore_counter%d",counter);
+            }
+            if( counter >= model->num_counters_core) {
+                sprintf(namebuf, "uncore_counter%d",counter- model->num_counters_core);
+            }
+            counter_dir[cpu][counter]        = proc_mkdir(namebuf,core_dir[cpu]);
+ 807:	48 89 02             	mov    %rax,(%rdx)
+            if(!counter_dir[cpu][counter]){
+ 80a:	0f 84 64 01 00 00    	je     974 <init_module+0x3e4>
+                topmc_proc_clean();
+                ret = -ENOMEM;
+                return ret;
+            }
+
+            mix_cpu_counter[cpu][counter] = topmc_mix16to32((unsigned short)cpu, (unsigned short)counter);
+ 810:	8b 75 ac             	mov    -0x54(%rbp),%esi
+ 813:	8b bd 7c ff ff ff    	mov    -0x84(%rbp),%edi
+ 819:	e8 00 00 00 00       	callq  81e <init_module+0x28e>
+ 81e:	48 8b 55 80          	mov    -0x80(%rbp),%rdx
+            entry[cpu][counter][0]   = proc_create_data("enable",0666,counter_dir[cpu][counter], &topmc_enable_fops, &mix_cpu_counter[cpu][counter]);
+ 822:	4c 8b 45 a0          	mov    -0x60(%rbp),%r8
+ 826:	48 c7 c1 00 00 00 00 	mov    $0x0,%rcx
+ 82d:	be b6 01 00 00       	mov    $0x1b6,%esi
+ 832:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+                topmc_proc_clean();
+                ret = -ENOMEM;
+                return ret;
+            }
+
+            mix_cpu_counter[cpu][counter] = topmc_mix16to32((unsigned short)cpu, (unsigned short)counter);
+ 839:	89 02                	mov    %eax,(%rdx)
+            entry[cpu][counter][0]   = proc_create_data("enable",0666,counter_dir[cpu][counter], &topmc_enable_fops, &mix_cpu_counter[cpu][counter]);
+ 83b:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+ 83f:	48 8b 10             	mov    (%rax),%rdx
+ 842:	e8 00 00 00 00       	callq  847 <init_module+0x2b7>
+ 847:	48 8b 55 90          	mov    -0x70(%rbp),%rdx
+			//entry[cpu][counter][0]   = create_proc_entry("enable",0666,counter_dir[cpu][counter]);
+            if(entry[cpu][counter][0]){
+ 84b:	48 85 c0             	test   %rax,%rax
+                ret = -ENOMEM;
+                return ret;
+            }
+
+            mix_cpu_counter[cpu][counter] = topmc_mix16to32((unsigned short)cpu, (unsigned short)counter);
+            entry[cpu][counter][0]   = proc_create_data("enable",0666,counter_dir[cpu][counter], &topmc_enable_fops, &mix_cpu_counter[cpu][counter]);
+ 84e:	48 89 42 f0          	mov    %rax,-0x10(%rdx)
+			//entry[cpu][counter][0]   = create_proc_entry("enable",0666,counter_dir[cpu][counter]);
+            if(entry[cpu][counter][0]){
+ 852:	0f 84 fe 00 00 00    	je     956 <init_module+0x3c6>
+                topmc_proc_clean();
+                ret = -ENOMEM;
+                return ret;
+            }
+
+            entry[cpu][counter][1]   = proc_create_data("event",0666,counter_dir[cpu][counter], &topmc_event_fops, &mix_cpu_counter[cpu][counter]);
+ 858:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+ 85c:	4c 8b 45 a0          	mov    -0x60(%rbp),%r8
+ 860:	48 c7 c1 00 00 00 00 	mov    $0x0,%rcx
+ 867:	be b6 01 00 00       	mov    $0x1b6,%esi
+ 86c:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 873:	48 8b 10             	mov    (%rax),%rdx
+ 876:	e8 00 00 00 00       	callq  87b <init_module+0x2eb>
+ 87b:	48 8b 55 90          	mov    -0x70(%rbp),%rdx
+			//entry[cpu][counter][1]   = create_proc_entry("event",0666,counter_dir[cpu][counter]);
+            if(entry[cpu][counter][1]){
+ 87f:	48 85 c0             	test   %rax,%rax
+                topmc_proc_clean();
+                ret = -ENOMEM;
+                return ret;
+            }
+
+            entry[cpu][counter][1]   = proc_create_data("event",0666,counter_dir[cpu][counter], &topmc_event_fops, &mix_cpu_counter[cpu][counter]);
+ 882:	48 89 42 f8          	mov    %rax,-0x8(%rdx)
+			//entry[cpu][counter][1]   = create_proc_entry("event",0666,counter_dir[cpu][counter]);
+            if(entry[cpu][counter][1]){
+ 886:	0f 84 ca 00 00 00    	je     956 <init_module+0x3c6>
+                printk("topmc_mod: create procfile %s error\n",namebuf);
+                topmc_proc_clean();
+                ret = -ENOMEM;
+                return ret;
+            }
+            entry[cpu][counter][2]   = proc_create_data("value",0666,counter_dir[cpu][counter], &topmc_value_fops, &mix_cpu_counter[cpu][counter]);
+ 88c:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+ 890:	4c 8b 45 a0          	mov    -0x60(%rbp),%r8
+ 894:	48 c7 c1 00 00 00 00 	mov    $0x0,%rcx
+ 89b:	be b6 01 00 00       	mov    $0x1b6,%esi
+ 8a0:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 8a7:	48 8b 10             	mov    (%rax),%rdx
+ 8aa:	e8 00 00 00 00       	callq  8af <init_module+0x31f>
+ 8af:	48 8b 55 90          	mov    -0x70(%rbp),%rdx
+ 8b3:	48 83 45 98 08       	addq   $0x8,-0x68(%rbp)
+ 8b8:	48 83 45 a0 04       	addq   $0x4,-0x60(%rbp)
+ 8bd:	48 83 45 80 04       	addq   $0x4,-0x80(%rbp)
+ 8c2:	48 89 02             	mov    %rax,(%rdx)
+ 8c5:	48 83 c2 18          	add    $0x18,%rdx
+            //entry[cpu][counter][2]   = create_proc_entry("value",0666,counter_dir[cpu][counter]);
+            if(entry[cpu][counter][2]){
+ 8c9:	48 85 c0             	test   %rax,%rax
+                printk("topmc_mod: create procfile %s error\n",namebuf);
+                topmc_proc_clean();
+                ret = -ENOMEM;
+                return ret;
+            }
+            entry[cpu][counter][2]   = proc_create_data("value",0666,counter_dir[cpu][counter], &topmc_value_fops, &mix_cpu_counter[cpu][counter]);
+ 8cc:	48 89 55 90          	mov    %rdx,-0x70(%rbp)
+            //entry[cpu][counter][2]   = create_proc_entry("value",0666,counter_dir[cpu][counter]);
+            if(entry[cpu][counter][2]){
+ 8d0:	0f 84 80 00 00 00    	je     956 <init_module+0x3c6>
+            topmc_proc_clean();
+            ret = -ENOMEM;
+            return ret;
+        }
+
+        for(counter=0;counter<model->num_counters_core+model->num_counters_uncore;counter++){
+ 8d6:	83 45 ac 01          	addl   $0x1,-0x54(%rbp)
+ 8da:	e9 ca fe ff ff       	jmpq   7a9 <init_module+0x219>
+#endif
+
+    enable_entry   = proc_create_data("enable_all",0666,root_dir, &topmc_enable_all_fops, NULL);
+	//enable_entry   = create_proc_entry("enable_all",0666,root_dir);
+    if(enable_entry == NULL){
+        remove_proc_entry("topmc",NULL);
+ 8df:	31 f6                	xor    %esi,%esi
+ 8e1:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 8e8:	e8 00 00 00 00       	callq  8ed <init_module+0x35d>
+        ret = -ENOMEM;
+        printk("topmc_mod: create enable_all entry error\n");
+ 8ed:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 8f4:	31 c0                	xor    %eax,%eax
+ 8f6:	e8 00 00 00 00       	callq  8fb <init_module+0x36b>
+ 8fb:	b8 f4 ff ff ff       	mov    $0xfffffff4,%eax
+        return ret;
+ 900:	e9 cd fd ff ff       	jmpq   6d2 <init_module+0x142>
+
+
+    enable_all_cr4_pce_entry = proc_create_data("enable_cr4_pce", 0666, root_dir, &topmc_cr4_pce_fops, &enable_all_cr4_pce);
+	//enable_all_cr4_pce_entry = create_proc_entry("enable_cr4_pce", 0666, root_dir);
+    if(enable_all_cr4_pce_entry == NULL) {
+        remove_proc_entry("topmc", NULL);
+ 905:	31 f6                	xor    %esi,%esi
+ 907:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 90e:	e8 00 00 00 00       	callq  913 <init_module+0x383>
+        ret = -ENOMEM;
+        printk("topmc_mod: create enable_cr4_pce entry error\n");
+ 913:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 91a:	31 c0                	xor    %eax,%eax
+ 91c:	e8 00 00 00 00       	callq  921 <init_module+0x391>
+ 921:	b8 f4 ff ff ff       	mov    $0xfffffff4,%eax
+        return ret;
+ 926:	e9 a7 fd ff ff       	jmpq   6d2 <init_module+0x142>
+
+    memset(topmc_procs,0,sizeof(topmc_procs));
+
+    root_dir        = proc_mkdir("topmc",NULL);
+    if(!root_dir){
+        printk("mkprocdir topmc error\n");
+ 92b:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 932:	e8 00 00 00 00       	callq  937 <init_module+0x3a7>
+ 937:	b8 f4 ff ff ff       	mov    $0xfffffff4,%eax
+        ret = -ENOMEM;
+        return ret;
+ 93c:	e9 91 fd ff ff       	jmpq   6d2 <init_module+0x142>
+    printk("+->topmc_init() start...\n");
+
+    topmc_model_detect();
+    if(!model)
+    {
+        printk("The processor is not supported yet.\n");
+ 941:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 948:	31 c0                	xor    %eax,%eax
+ 94a:	e8 00 00 00 00       	callq  94f <init_module+0x3bf>
+ 94f:	31 c0                	xor    %eax,%eax
+        return ret;
+ 951:	e9 7c fd ff ff       	jmpq   6d2 <init_module+0x142>
+                //entry[cpu][counter][2]->data                     = &mix_cpu_counter[cpu][counter];
+                //entry[cpu][counter][2]->read_proc        = topmc_value_read;
+                //entry[cpu][counter][2]->write_proc       = topmc_value_write;
+            }
+            else {
+                printk("topmc_mod: create procfile %s error\n",namebuf);
+ 956:	4c 89 e6             	mov    %r12,%rsi
+ 959:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 960:	e8 00 00 00 00       	callq  965 <init_module+0x3d5>
+                topmc_proc_clean();
+ 965:	e8 00 00 00 00       	callq  96a <init_module+0x3da>
+ 96a:	b8 f4 ff ff ff       	mov    $0xfffffff4,%eax
+                ret = -ENOMEM;
+                return ret;
+ 96f:	e9 5e fd ff ff       	jmpq   6d2 <init_module+0x142>
+            if( counter >= model->num_counters_core) {
+                sprintf(namebuf, "uncore_counter%d",counter- model->num_counters_core);
+            }
+            counter_dir[cpu][counter]        = proc_mkdir(namebuf,core_dir[cpu]);
+            if(!counter_dir[cpu][counter]){
+                printk("mkprocdir %s  error\n",namebuf);
+ 974:	4c 89 e6             	mov    %r12,%rsi
+ 977:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 97e:	e8 00 00 00 00       	callq  983 <init_module+0x3f3>
+                topmc_proc_clean();
+ 983:	e8 00 00 00 00       	callq  988 <init_module+0x3f8>
+ 988:	b8 f4 ff ff ff       	mov    $0xfffffff4,%eax
+                ret = -ENOMEM;
+                return ret;
+ 98d:	e9 40 fd ff ff       	jmpq   6d2 <init_module+0x142>
+        }
+
+        for(counter=0;counter<model->num_counters_core+model->num_counters_uncore;counter++){
+            memset(namebuf,0,TOPMC_MAX_NAMELEN);
+            if( counter < model->num_counters_core) {
+                sprintf(namebuf,"incore_counter%d",counter);
+ 992:	8b 55 ac             	mov    -0x54(%rbp),%edx
+ 995:	31 c0                	xor    %eax,%eax
+ 997:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+ 99e:	4c 89 e7             	mov    %r12,%rdi
+ 9a1:	e8 00 00 00 00       	callq  9a6 <init_module+0x416>
+            }
+            if( counter >= model->num_counters_core) {
+ 9a6:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 9ad <init_module+0x41d>
+ 9ad:	8b 40 28             	mov    0x28(%rax),%eax
+ 9b0:	39 45 ac             	cmp    %eax,-0x54(%rbp)
+ 9b3:	0f 8c 33 fe ff ff    	jl     7ec <init_module+0x25c>
+ 9b9:	e9 18 fe ff ff       	jmpq   7d6 <init_module+0x246>
+        printk("+->topmc_init(): cpu:%d\n",cpu);
+        memset(namebuf,0,TOPMC_MAX_NAMELEN);
+        sprintf(namebuf,"core%02d",cpu);
+        core_dir[cpu]        = proc_mkdir(namebuf,root_dir);
+        if(!core_dir[cpu]){
+            printk("mkprocdir %s  error\n",namebuf);
+ 9be:	4c 89 e6             	mov    %r12,%rsi
+ 9c1:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ 9c8:	31 c0                	xor    %eax,%eax
+ 9ca:	e8 00 00 00 00       	callq  9cf <init_module+0x43f>
+            topmc_proc_clean();
+ 9cf:	e8 00 00 00 00       	callq  9d4 <init_module+0x444>
+ 9d4:	b8 f4 ff ff ff       	mov    $0xfffffff4,%eax
+            ret = -ENOMEM;
+            return ret;
+ 9d9:	e9 f4 fc ff ff       	jmpq   6d2 <init_module+0x142>
+ 9de:	66 90                	xchg   %ax,%ax
+
+00000000000009e0 <topmc_enable_rdpmc>:
+	return;
+}
+
+
+void topmc_enable_rdpmc(void)
+{
+ 9e0:	55                   	push   %rbp
+ 9e1:	48 89 e5             	mov    %rsp,%rbp
+ 9e4:	48 83 ec 20          	sub    $0x20,%rsp
+ 9e8:	48 89 5d f0          	mov    %rbx,-0x10(%rbp)
+ 9ec:	4c 89 65 f8          	mov    %r12,-0x8(%rbp)
+ 9f0:	e8 00 00 00 00       	callq  9f5 <topmc_enable_rdpmc+0x15>
+ 9f5:	4c 8b 25 00 00 00 00 	mov    0x0(%rip),%r12        # 9fc <topmc_enable_rdpmc+0x1c>
+ 9fc:	bb ff ff ff ff       	mov    $0xffffffff,%ebx
+ a01:	48 63 35 00 00 00 00 	movslq 0x0(%rip),%rsi        # a08 <topmc_enable_rdpmc+0x28>
+ a08:	83 c3 01             	add    $0x1,%ebx
+ a0b:	4c 89 e7             	mov    %r12,%rdi
+ a0e:	48 63 d3             	movslq %ebx,%rdx
+ a11:	e8 00 00 00 00       	callq  a16 <topmc_enable_rdpmc+0x36>
+	int cpu;
+    unsigned long cr4;
+    int val = 0;
+
+    val = 1;
+	for_each_online_cpu(cpu) {
+ a16:	3b 05 00 00 00 00    	cmp    0x0(%rip),%eax        # a1c <topmc_enable_rdpmc+0x3c>
+ a1c:	89 c3                	mov    %eax,%ebx
+ a1e:	7c 0a                	jl     a2a <topmc_enable_rdpmc+0x4a>
+		topmc_write_cr4_pce(cpu, val);
+        cr4 = read_cr4();
+		printk("topmc_enable_rdpmc:cpu=%d, cr4:%lx\n",cpu,cr4);
+	}
+
+}
+ a20:	48 8b 5d f0          	mov    -0x10(%rbp),%rbx
+ a24:	4c 8b 65 f8          	mov    -0x8(%rbp),%r12
+ a28:	c9                   	leaveq 
+ a29:	c3                   	retq   
+    unsigned long cr4;
+    int val = 0;
+
+    val = 1;
+	for_each_online_cpu(cpu) {
+		topmc_write_cr4_pce(cpu, val);
+ a2a:	be 01 00 00 00       	mov    $0x1,%esi
+ a2f:	89 c7                	mov    %eax,%edi
+ a31:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+ a35:	e8 00 00 00 00       	callq  a3a <topmc_enable_rdpmc+0x5a>
+}
+
+static inline unsigned long native_read_cr4(void)
+{
+	unsigned long val;
+	asm volatile("mov %%cr4,%0\n\t" : "=r" (val), "=m" (__force_order));
+ a3a:	0f 20 e2             	mov    %cr4,%rdx
+        cr4 = read_cr4();
+		printk("topmc_enable_rdpmc:cpu=%d, cr4:%lx\n",cpu,cr4);
+ a3d:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ a41:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+ a48:	89 c6                	mov    %eax,%esi
+ a4a:	31 c0                	xor    %eax,%eax
+ a4c:	e8 00 00 00 00       	callq  a51 <topmc_enable_rdpmc+0x71>
+ a51:	eb ae                	jmp    a01 <topmc_enable_rdpmc+0x21>
+ a53:	66 66 66 66 2e 0f 1f 	data32 data32 data32 nopw %cs:0x0(%rax,%rax,1)
+ a5a:	84 00 00 00 00 00 
+
+0000000000000a60 <topmc_cr4_pce_write>:
+
+    return count;
+}
+
+int topmc_cr4_pce_write(struct file *file, const char __user *buffer, unsigned long count, void *data)
+{
+ a60:	55                   	push   %rbp
+ a61:	48 89 e5             	mov    %rsp,%rbp
+ a64:	48 83 ec 20          	sub    $0x20,%rsp
+ a68:	48 89 1c 24          	mov    %rbx,(%rsp)
+ a6c:	4c 89 64 24 08       	mov    %r12,0x8(%rsp)
+ a71:	4c 89 6c 24 10       	mov    %r13,0x10(%rsp)
+ a76:	4c 89 74 24 18       	mov    %r14,0x18(%rsp)
+ a7b:	e8 00 00 00 00       	callq  a80 <topmc_cr4_pce_write+0x20>
+    unsigned int sum = 0;
+    unsigned int pce;
+    char* str = (char*) data;
+    long ret;
+
+    ret = strncpy_from_user(str, buffer, count);
+ a80:	48 89 cf             	mov    %rcx,%rdi
+
+    return count;
+}
+
+int topmc_cr4_pce_write(struct file *file, const char __user *buffer, unsigned long count, void *data)
+{
+ a83:	48 89 d3             	mov    %rdx,%rbx
+ a86:	49 89 cc             	mov    %rcx,%r12
+    unsigned int sum = 0;
+    unsigned int pce;
+    char* str = (char*) data;
+    long ret;
+
+    ret = strncpy_from_user(str, buffer, count);
+ a89:	e8 00 00 00 00       	callq  a8e <topmc_cr4_pce_write+0x2e>
+    if(ret < 0)
+ a8e:	48 85 c0             	test   %rax,%rax
+ a91:	ba f2 ff ff ff       	mov    $0xfffffff2,%edx
+ a96:	79 18                	jns    ab0 <topmc_cr4_pce_write+0x50>
+    for_each_online_cpu(cpu) {
+        TOPMC_WRITE_CR4_PCE(cpu, pce);
+    }
+
+    return count;
+}
+ a98:	89 d0                	mov    %edx,%eax
+ a9a:	48 8b 1c 24          	mov    (%rsp),%rbx
+ a9e:	4c 8b 64 24 08       	mov    0x8(%rsp),%r12
+ aa3:	4c 8b 6c 24 10       	mov    0x10(%rsp),%r13
+ aa8:	4c 8b 74 24 18       	mov    0x18(%rsp),%r14
+ aad:	c9                   	leaveq 
+ aae:	c3                   	retq   
+ aaf:	90                   	nop
+    long ret;
+
+    ret = strncpy_from_user(str, buffer, count);
+    if(ret < 0)
+        return -EFAULT;
+    if(ret ==0 || ret > count)
+ ab0:	48 39 d8             	cmp    %rbx,%rax
+ ab3:	0f 87 87 00 00 00    	ja     b40 <topmc_cr4_pce_write+0xe0>
+ ab9:	48 85 c0             	test   %rax,%rax
+ abc:	0f 84 7e 00 00 00    	je     b40 <topmc_cr4_pce_write+0xe0>
+        return -EINVAL;
+
+    for(i=0; i<count-1; i++) {
+ ac2:	48 89 d9             	mov    %rbx,%rcx
+ ac5:	45 31 ed             	xor    %r13d,%r13d
+ ac8:	48 83 e9 01          	sub    $0x1,%rcx
+ acc:	74 24                	je     af2 <topmc_cr4_pce_write+0x92>
+ ace:	31 d2                	xor    %edx,%edx
+ ad0:	31 c0                	xor    %eax,%eax
+ ad2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+        sum = sum*10+ str[i] - '0';
+ ad8:	41 0f be 14 14       	movsbl (%r12,%rdx,1),%edx
+ add:	47 8d 6c ad 00       	lea    0x0(%r13,%r13,4),%r13d
+    if(ret < 0)
+        return -EFAULT;
+    if(ret ==0 || ret > count)
+        return -EINVAL;
+
+    for(i=0; i<count-1; i++) {
+ ae2:	83 c0 01             	add    $0x1,%eax
+        sum = sum*10+ str[i] - '0';
+ ae5:	46 8d 6c 6a d0       	lea    -0x30(%rdx,%r13,2),%r13d
+    if(ret < 0)
+        return -EFAULT;
+    if(ret ==0 || ret > count)
+        return -EINVAL;
+
+    for(i=0; i<count-1; i++) {
+ aea:	48 63 d0             	movslq %eax,%rdx
+ aed:	48 39 ca             	cmp    %rcx,%rdx
+ af0:	72 e6                	jb     ad8 <topmc_cr4_pce_write+0x78>
+ af2:	4c 8b 25 00 00 00 00 	mov    0x0(%rip),%r12        # af9 <topmc_cr4_pce_write+0x99>
+ af9:	41 be ff ff ff ff    	mov    $0xffffffff,%r14d
+        pce = 1;
+    } else {
+        pce = 0;
+    }
+
+    for_each_online_cpu(cpu) {
+ aff:	eb 17                	jmp    b18 <topmc_cr4_pce_write+0xb8>
+ b01:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+        TOPMC_WRITE_CR4_PCE(cpu, pce);
+ b08:	31 f6                	xor    %esi,%esi
+ b0a:	45 85 ed             	test   %r13d,%r13d
+ b0d:	89 c7                	mov    %eax,%edi
+ b0f:	40 0f 95 c6          	setne  %sil
+ b13:	e8 00 00 00 00       	callq  b18 <topmc_cr4_pce_write+0xb8>
+ b18:	48 63 35 00 00 00 00 	movslq 0x0(%rip),%rsi        # b1f <topmc_cr4_pce_write+0xbf>
+ b1f:	41 83 c6 01          	add    $0x1,%r14d
+ b23:	4c 89 e7             	mov    %r12,%rdi
+ b26:	49 63 d6             	movslq %r14d,%rdx
+ b29:	e8 00 00 00 00       	callq  b2e <topmc_cr4_pce_write+0xce>
+        pce = 1;
+    } else {
+        pce = 0;
+    }
+
+    for_each_online_cpu(cpu) {
+ b2e:	3b 05 00 00 00 00    	cmp    0x0(%rip),%eax        # b34 <topmc_cr4_pce_write+0xd4>
+ b34:	41 89 c6             	mov    %eax,%r14d
+ b37:	7c cf                	jl     b08 <topmc_cr4_pce_write+0xa8>
+        TOPMC_WRITE_CR4_PCE(cpu, pce);
+    }
+
+    return count;
+ b39:	89 da                	mov    %ebx,%edx
+ b3b:	e9 58 ff ff ff       	jmpq   a98 <topmc_cr4_pce_write+0x38>
+    long ret;
+
+    ret = strncpy_from_user(str, buffer, count);
+    if(ret < 0)
+        return -EFAULT;
+    if(ret ==0 || ret > count)
+ b40:	ba ea ff ff ff       	mov    $0xffffffea,%edx
+ b45:	e9 4e ff ff ff       	jmpq   a98 <topmc_cr4_pce_write+0x38>
+ b4a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000b50 <topmc_cr4_pce_read>:
+EXPORT_SYMBOL(topmc_pmc_cnt_bitmap);
+EXPORT_SYMBOL(topmc_pmc_chg);
+*/
+
+int topmc_cr4_pce_read(char *page, char **start, off_t off, int count, int *eof, void *data)
+{
+ b50:	55                   	push   %rbp
+ b51:	48 89 e5             	mov    %rsp,%rbp
+ b54:	41 57                	push   %r15
+ b56:	41 56                	push   %r14
+ b58:	41 55                	push   %r13
+ b5a:	41 54                	push   %r12
+ b5c:	53                   	push   %rbx
+ b5d:	48 83 ec 18          	sub    $0x18,%rsp
+ b61:	e8 00 00 00 00       	callq  b66 <topmc_cr4_pce_read+0x16>
+ b66:	4c 8b 25 00 00 00 00 	mov    0x0(%rip),%r12        # b6d <topmc_cr4_pce_read+0x1d>
+ b6d:	bb 01 00 00 00       	mov    $0x1,%ebx
+ b72:	41 bf ff ff ff ff    	mov    $0xffffffff,%r15d
+ b78:	49 89 fe             	mov    %rdi,%r14
+    int cpu;
+    int pce;
+    int is_set=1;
+
+    for_each_online_cpu(cpu) {
+        TOPMC_READ_CR4_PCE(cpu, pce);
+ b7b:	4c 8d 6d cc          	lea    -0x34(%rbp),%r13
+{
+    int cpu;
+    int pce;
+    int is_set=1;
+
+    for_each_online_cpu(cpu) {
+ b7f:	eb 14                	jmp    b95 <topmc_cr4_pce_read+0x45>
+ b81:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+        TOPMC_READ_CR4_PCE(cpu, pce);
+ b88:	4c 89 ee             	mov    %r13,%rsi
+ b8b:	89 c7                	mov    %eax,%edi
+ b8d:	e8 00 00 00 00       	callq  b92 <topmc_cr4_pce_read+0x42>
+        is_set &= pce;
+ b92:	23 5d cc             	and    -0x34(%rbp),%ebx
+ b95:	48 63 35 00 00 00 00 	movslq 0x0(%rip),%rsi        # b9c <topmc_cr4_pce_read+0x4c>
+ b9c:	41 83 c7 01          	add    $0x1,%r15d
+ ba0:	4c 89 e7             	mov    %r12,%rdi
+ ba3:	49 63 d7             	movslq %r15d,%rdx
+ ba6:	e8 00 00 00 00       	callq  bab <topmc_cr4_pce_read+0x5b>
+{
+    int cpu;
+    int pce;
+    int is_set=1;
+
+    for_each_online_cpu(cpu) {
+ bab:	3b 05 00 00 00 00    	cmp    0x0(%rip),%eax        # bb1 <topmc_cr4_pce_read+0x61>
+ bb1:	41 89 c7             	mov    %eax,%r15d
+ bb4:	7c d2                	jl     b88 <topmc_cr4_pce_read+0x38>
+        TOPMC_READ_CR4_PCE(cpu, pce);
+        is_set &= pce;
+    }
+    count = sprintf(page, "%d\n", is_set);
+ bb6:	89 da                	mov    %ebx,%edx
+ bb8:	4c 89 f7             	mov    %r14,%rdi
+ bbb:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+ bc2:	31 c0                	xor    %eax,%eax
+ bc4:	e8 00 00 00 00       	callq  bc9 <topmc_cr4_pce_read+0x79>
+
+    return count;
+}
+ bc9:	48 83 c4 18          	add    $0x18,%rsp
+ bcd:	5b                   	pop    %rbx
+ bce:	41 5c                	pop    %r12
+ bd0:	41 5d                	pop    %r13
+ bd2:	41 5e                	pop    %r14
+ bd4:	41 5f                	pop    %r15
+ bd6:	c9                   	leaveq 
+ bd7:	c3                   	retq   
+
+Disassembly of section .exit.text:
+
+0000000000000000 <cleanup_module>:
+}
+
+
+
+void __exit topmc_cleanup(void )
+{
+   0:	55                   	push   %rbp
+	printk("+->topmc_mod: unloaded\n");
+   1:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+   8:	31 c0                	xor    %eax,%eax
+}
+
+
+
+void __exit topmc_cleanup(void )
+{
+   a:	48 89 e5             	mov    %rsp,%rbp
+	printk("+->topmc_mod: unloaded\n");
+   d:	e8 00 00 00 00       	callq  12 <cleanup_module+0x12>
+	topmc_proc_clean();
+  12:	e8 00 00 00 00       	callq  17 <cleanup_module+0x17>
+
+
+}
+  17:	c9                   	leaveq 
+  18:	c3                   	retq   
