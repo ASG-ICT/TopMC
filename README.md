@@ -16,7 +16,7 @@ TopMC is a lightweight performance counter monitor and trace collector:
 
 * User level RDPMC instruction: TopMC provides API using RDPMC instruction to monitor code fragements of applications. RDPMC instruction costs only tens of cycles.Thus, applications can obtain more accurate performance counters. 
 
-* Support uncore events in Nehalem: The Intel Nehalem architecture splits the performance counter events into two parts: core events and uncore events. Each part has its own performance counter registers. Most performance counter monitor tools can only support core events, but not uncore events related with L3 cache and memory controller.
+* Support uncore events in Nehalem,ivybridge_e,broadwell,skylake_sp: The Intel architecture splits the performance counter events into two parts: core events and uncore events. Each part has its own performance counter registers. Most performance counter monitor tools can only support core events, but not uncore events related with L3 cache and memory controller.
 
 ## Features of the TopMC
 
