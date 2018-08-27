@@ -67,8 +67,10 @@ TopMC provides two ways to use performance counters. One is performance counter 
 * Run your application immediately: 
 
     ```shell
-    python display_topmc_nehalem.py
+    python display_topmc.py
     ```
+    
+    ![results](https://github.com/ASG-ICT/TopMC/blob/master/picture/topmc-shell.jpg)
 
 * Gather the performance counters: 
 
@@ -100,7 +102,11 @@ TopMC provides two ways to use performance counters. One is performance counter 
 
     Samples can be found in the source codes.
 
-    
+### Implementation Mechanism
+
+The implementation of performance counter monitor tools focus on the interaction with linux kernel. TopMC registers a procs file system using linux kernel module. The framework also contains how to collect kernel trace: 
+
+![architecture](https://github.com/ASG-ICT/TopMC/blob/master/picture/topmc.jpg)
 
     
 
