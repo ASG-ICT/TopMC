@@ -24,6 +24,10 @@ Besides providing low overhead performance counters at specific time, TopMC can 
 
 ## Installation 
 
+### Operating environment
+
+   linux kernel 3.10.X
+
 ### Compile and Install 
 
   * Change to 'topmc_mod' direcotry, and compile the module: 
