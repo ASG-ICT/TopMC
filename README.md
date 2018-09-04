@@ -105,6 +105,34 @@ TopMC provides two ways to use performance counters. One is performance counter 
 * Insert corresponding macros to monitored codes and rebuild the application: 
 
     Samples can be found in the source codes.
+    
+### Differences between TopMC and Perf
+
+   Perf is a performance analyzing tool in Linux，TopMC can be competent at anything that TopMC can do, while TopMC supports uncore events better. Perf can't count the performance of the certain function, but TopMC can do it, just insert some code at the beginning and end of the function. such as :
+
+   ```shell
+   #counter event format:'**--xyz#'
+   #'**' stands for event
+   #'--' stands for unit mask
+   #'x' stands for cmask (only 4-bit value)
+   #'y' stands for inv 
+   #'z' stands for edge
+   #'#' stands for usr/kernel:0-nothing,1-user,2-kernel,3-user and kernel
+   
+   incore_counter0_event='**--xyz#'
+   echo "0" >  "/proc/topmc/core0/incore_counter0/enable"  # you can change the core number and counter number
+   echo incore_counter0_event > "/proc/topmc/core0/incore_counter0/event"  # you can change the core number and counter number
+   echo "1" >  "/proc/topmc/core0/incore_counter0/enable"  # you can change the core number and counter number
+
+   ####
+   # your function
+   ####
+   
+   # display_topmc.py will record the value of the certain event
+   python topmc_script/display_topmc.py
+
+   ```
+   
 
 ### Implementation Mechanism
 
