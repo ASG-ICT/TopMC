@@ -1,0 +1,29 @@
+WARNING: CPU: 3 PID: 3864 at lib/list_debug.c:59 __list_del_entry+0xa1/0xd0()
+list_del corruption. prev->next should be ffff880170da5980, but was ffff880170da0a30
+Modules linked in: topmc_trace(OF) topmc_module(OF) fuse ebtable_nat ebtables xt_CHECKSUM iptable_mangle bridge autofs4 8021q garp stp llc cpufreq_ondemand ipt_REJECT nf_conntrack_ipv4 nf_defrag_ipv4 iptable_filter ip_tables ip6t_REJECT nf_conntrack_ipv6 nf_defrag_ipv6 xt_state nf_conntrack ip6table_filter ip6_tables ipv6 vhost_net macvtap macvlan vhost tun kvm_intel kvm uinput mxm_wmi iTCO_wdt iTCO_vendor_support microcode pcspkr ipmi_si ipmi_msghandler acpi_cpufreq freq_table sg wmi i2c_i801 lpc_ich mfd_core ioatdma igb dca i2c_algo_bit i2c_core ptp pps_core ext4(F) jbd2(F) mbcache(F) sd_mod(F) crc_t10dif(F) ahci(F) libahci(F) isci(F) libsas(F) scsi_transport_sas(F) dm_mirror(F) dm_region_hash(F) dm_log(F) dm_mod(F)
+CPU: 3 PID: 3864 Comm: python Tainted: GF          O 3.12.13-TopMC #1
+Hardware name: Supermicro X9DR3-F/X9DR3-F, BIOS 3.2 03/11/2015
+ 000000000000003b ffff880165599ba8 ffffffff81553e18 000000000000003b
+ ffff880165599bf8 ffff880165599be8 ffffffff8104d30c ffff880165599c38
+ ffff880170da5980 ffff880073d46840 0000000000000000 ffff880170d0f3c0
+Call Trace:
+ [<ffffffff81553e18>] dump_stack+0x49/0x61
+ [<ffffffff8104d30c>] warn_slowpath_common+0x8c/0xc0
+ [<ffffffff8104d3f6>] warn_slowpath_fmt+0x46/0x50
+ [<ffffffff8114f959>] ? exit_mmap+0x139/0x170
+ [<ffffffff812873b1>] __list_del_entry+0xa1/0xd0
+ [<ffffffff811814bd>] file_sb_list_del+0x2d/0x50
+ [<ffffffff811815d5>] fput+0x35/0xc0
+ [<ffffffff8117d573>] filp_close+0x63/0x90
+ [<ffffffff8119cf3a>] put_files_struct+0x8a/0xf0
+ [<ffffffff8119cfec>] exit_files+0x4c/0x60
+ [<ffffffff8104fbb7>] do_exit+0x197/0x480
+ [<ffffffff8104fef1>] do_group_exit+0x51/0xc0
+ [<ffffffff81060939>] get_signal_to_deliver+0x229/0x420
+ [<ffffffff8100390b>] do_signal+0x4b/0x140
+ [<ffffffff8117f1f4>] ? fsnotify_access+0x64/0x80
+ [<ffffffff8117f8e2>] ? vfs_read+0xc2/0x130
+ [<ffffffff81003a65>] do_notify_resume+0x65/0x90
+ [<ffffffff81560a5a>] int_signal+0x12/0x17
+---[ end trace 92a956b3a8500ece ]---
+

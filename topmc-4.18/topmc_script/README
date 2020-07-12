@@ -1,0 +1,32 @@
+The readme text for topmc which counting core and uncore performance on Nehelam Architecuture, such as processor Core i7 and Xeon 55XX series.
+
+By huangyb @ 2010.04.22
+
+Modified @ 2010.05.20
+
+Use Description:
+
+1.events
+	Description all the events the processors supported
+
+2.record_result.py
+	Gather the performance counters of corresponding events and redirect all the results into a result file about every 1 second
+
+3.display_topmc.py
+	Gather the information from the /proc/topmc and display to the standard output
+
+4.set_events.sh
+	Set events for each counters
+
+5.main.c
+	Substitute this for init/main.c in the linux kernel source code
+
+
+Use Procedure:
+1. Change the events you want to counter in set_events.sh
+
+2. Run sh set_events.sh
+
+3.Run python record_result.py
+
+

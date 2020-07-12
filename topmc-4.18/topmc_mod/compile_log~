@@ -1,0 +1,87 @@
+1.
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c: 在函数‘topmc_model_detect’中:
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:278: 错误：‘current_cpu_data’未声明(在此函数内第一次使用)
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:278: 错误：(即使在一个函数内多次出现，每个未声明的标识符在其
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:278: 错误：所在的函数内也只报告一次。)
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c: 在函数‘topmc_init’中:
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:355: 错误：隐式声明函数‘create_proc_entry’
+
+2.
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c: 在函数‘topmc_init’中:
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:355: 错误：隐式声明函数‘create_proc_entry’
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:355: 警告：赋值时将整数赋给指针，未作类型转换
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:362: 错误：提领指向不完全类型的指针
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:363: 错误：提领指向不完全类型的指针
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:364: 错误：提领指向不完全类型的指针
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:367: 警告：赋值时将整数赋给指针，未作类型转换
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:374: 错误：提领指向不完全类型的指针
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:375: 错误：提领指向不完全类型的指针
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:407: 警告：赋值时将整数赋给指针，未作类型转换
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:409: 错误：提领指向不完全类型的指针
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:410: 错误：提领指向不完全类型的指针
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:411: 错误：提领指向不完全类型的指针
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:420: 警告：赋值时将整数赋给指针，未作类型转换
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:422: 错误：提领指向不完全类型的指针
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:423: 错误：提领指向不完全类型的指针
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:424: 错误：提领指向不完全类型的指针
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:432: 警告：赋值时将整数赋给指针，未作类型转换
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:434: 错误：提领指向不完全类型的指针
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:435: 错误：提领指向不完全类型的指针
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:436: 错误：提领指向不完全类型的指针
+make[1]: *** [/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.o] 错误 1
+make: *** [_module_/home/zjt/topmc-process-switch/topmc_mod] 错误 2
+
+3.
+[root@asgSender2 topmc_mod]# sh make.sh
+make: Entering directory `/home/zjt/linux-3.12.13-topmc/linux-3.12.13'
+  CC [M]  /home/zjt/topmc-process-switch/topmc_mod/topmc_model_nehelam.o
+  CC [M]  /home/zjt/topmc-process-switch/topmc_mod/topmc_model_amd.o
+  CC [M]  /home/zjt/topmc-process-switch/topmc_mod/topmc_mod.o
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:110: 警告：从不兼容的指针类型初始化
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:111: 警告：从不兼容的指针类型初始化
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:133: 警告：从不兼容的指针类型初始化
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:134: 警告：从不兼容的指针类型初始化
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:151: 警告：从不兼容的指针类型初始化
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:152: 警告：从不兼容的指针类型初始化
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:180: 警告：从不兼容的指针类型初始化
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:181: 警告：从不兼容的指针类型初始化
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:206: 警告：从不兼容的指针类型初始化
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:207: 警告：从不兼容的指针类型初始化
+  CC [M]  /home/zjt/topmc-process-switch/topmc_mod/topmc_mod_lib.o
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod_lib.c:3:24: 错误：asm/system.h：没有那个文件或目录
+make[1]: *** [/home/zjt/topmc-process-switch/topmc_mod/topmc_mod_lib.o] 错误 1
+make: *** [_module_/home/zjt/topmc-process-switch/topmc_mod] 错误 2
+make: Leaving directory `/home/zjt/linux-3.12.13-topmc/linux-3.12.13'
+
+4.
+[root@asgSender2 topmc_mod]# make clean
+rm -f *.ko *.o Module.markers modules.order Module.symvers
+[root@asgSender2 topmc_mod]# sh make.sh
+make: Entering directory `/home/zjt/linux-3.12.13-topmc/linux-3.12.13'
+  CC [M]  /home/zjt/topmc-process-switch/topmc_mod/topmc_model_nehelam.o
+  CC [M]  /home/zjt/topmc-process-switch/topmc_mod/topmc_model_amd.o
+  CC [M]  /home/zjt/topmc-process-switch/topmc_mod/topmc_mod.o
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:110: 警告：从不兼容的指针类型初始化
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:111: 警告：从不兼容的指针类型初始化
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:133: 警告：从不兼容的指针类型初始化
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:134: 警告：从不兼容的指针类型初始化
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:151: 警告：从不兼容的指针类型初始化
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:152: 警告：从不兼容的指针类型初始化
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:180: 警告：从不兼容的指针类型初始化
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:181: 警告：从不兼容的指针类型初始化
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:206: 警告：从不兼容的指针类型初始化
+/home/zjt/topmc-process-switch/topmc_mod/topmc_mod.c:207: 警告：从不兼容的指针类型初始化
+  CC [M]  /home/zjt/topmc-process-switch/topmc_mod/topmc_mod_lib.o
+  CC [M]  /home/zjt/topmc-process-switch/topmc_mod/topmc_msr.o
+/home/zjt/topmc-process-switch/topmc_mod/topmc_msr.c: 在函数‘topmc_rdmsr_smp’中:
+/home/zjt/topmc-process-switch/topmc_mod/topmc_msr.c:19: 错误：隐式声明函数‘this_cpu_read’
+make[1]: *** [/home/zjt/topmc-process-switch/topmc_mod/topmc_msr.o] 错误 1
+make: *** [_module_/home/zjt/topmc-process-switch/topmc_mod] 错误 2
+make: Leaving directory `/home/zjt/linux-3.12.13-topmc/linux-3.12.13'
+
+5.(dmesg)
++->topmc_init() start...
+topmc->topmc_model_detect(): vendor:0, family: 6.
+topmc->topmc_model_detect(): family of intel 6  model 62 not supported.
+The processor is not supported yet.
+

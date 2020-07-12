@@ -1,0 +1,112 @@
+1593959580.59 Sun Jul 5 10:33:00 2020
+Sun Jul  5 10:33:00 2020   1593959580.62
+            incore0       incore1       uncore0       uncore1          uncore2          uncore3          uncore4          uncore5       uncore6       uncore7
+          LLC_MISSE     LLC_MISSE      UNC_READ     UNC_WRITE   U_QHL_REQUESTS   U_QHL_REQUESTS   U_QHL_REQUESTS   U_QHL_REQUESTS   UNC_L3_MISS   UNC_L3_MISS
+        UMask: 0x4f   UMask: 0x41   UMask: 0x07   UMask: 0x07      UMask: 0x01      UMask: 0x02      UMask: 0x04      UMask: 0x10   UMask: 0x03   UMask: 0x04
+                  -             -             -             -                -                -                -                -             -             -
+                  -             -             -             -                -                -                -                -             -             -
+cpu0       27679000       1226722             0             0                0                0                0                0            20            20
+cpu1       24801402       1268886             0             0                0                0                0                0            20            20
+cpu2       39620486       2311421             0             0                0                0                0                0            20            20
+cpu3       30770410       1503130             0             0                0                0                0                0            20            20
+cpu4       90895899       1662345             0             0                0                0                0                0            20            20
+cpu5       41528469       1566472             0             0                0                0                0                0            20            20
+eclapsed time:32.1018695831ms
+1593959581.62 Sun Jul 5 10:33:01 2020
+Sun Jul  5 10:33:01 2020   1593959581.65
+            incore0       incore1       uncore0       uncore1          uncore2          uncore3          uncore4          uncore5       uncore6       uncore7
+          LLC_MISSE     LLC_MISSE      UNC_READ     UNC_WRITE   U_QHL_REQUESTS   U_QHL_REQUESTS   U_QHL_REQUESTS   U_QHL_REQUESTS   UNC_L3_MISS   UNC_L3_MISS
+        UMask: 0x4f   UMask: 0x41   UMask: 0x07   UMask: 0x07      UMask: 0x01      UMask: 0x02      UMask: 0x04      UMask: 0x10   UMask: 0x03   UMask: 0x04
+                  -             -             -             -                -                -                -                -             -             -
+                  -             -             -             -                -                -                -                -             -             -
+cpu0       27828379       1236792             0             0                0                0                0                0            20            20
+cpu1       24922367       1270950             0             0                0                0                0                0            20            20
+cpu2       39845584       2313819             0             0                0                0                0                0            20            20
+cpu3       31616311       1515225             0             0                0                0                0                0            20            20
+cpu4       91262448       1669211             0             0                0                0                0                0            20            20
+cpu5       41661713       1568174             0             0                0                0                0                0            20            20
+eclapsed time:31.3410758972ms
+1593959582.66 Sun Jul 5 10:33:02 2020
+Sun Jul  5 10:33:02 2020   1593959582.69
+            incore0       incore1       uncore0       uncore1          uncore2          uncore3          uncore4          uncore5       uncore6       uncore7
+          LLC_MISSE     LLC_MISSE      UNC_READ     UNC_WRITE   U_QHL_REQUESTS   U_QHL_REQUESTS   U_QHL_REQUESTS   U_QHL_REQUESTS   UNC_L3_MISS   UNC_L3_MISS
+        UMask: 0x4f   UMask: 0x41   UMask: 0x07   UMask: 0x07      UMask: 0x01      UMask: 0x02      UMask: 0x04      UMask: 0x10   UMask: 0x03   UMask: 0x04
+                  -             -             -             -                -                -                -                -             -             -
+                  -             -             -             -                -                -                -                -             -             -
+cpu0       27961802       1237982             0             0                0                0                0                0            20            20
+cpu1       25258425       1272052             0             0                0                0                0                0            20            20
+cpu2       40010339       2314340             0             0                0                0                0                0            20            20
+cpu3       31939816       1516674             0             0                0                0                0                0            20            20
+cpu4       91991773       1673608             0             0                0                0                0                0            20            20
+cpu5       41783953       1568636             0             0                0                0                0                0            20            20
+eclapsed time:31.375169754ms
+1593959583.69 Sun Jul 5 10:33:03 2020
+Sun Jul  5 10:33:03 2020   1593959583.72
+            incore0       incore1       uncore0       uncore1          uncore2          uncore3          uncore4          uncore5       uncore6       uncore7
+          LLC_MISSE     LLC_MISSE      UNC_READ     UNC_WRITE   U_QHL_REQUESTS   U_QHL_REQUESTS   U_QHL_REQUESTS   U_QHL_REQUESTS   UNC_L3_MISS   UNC_L3_MISS
+        UMask: 0x4f   UMask: 0x41   UMask: 0x07   UMask: 0x07      UMask: 0x01      UMask: 0x02      UMask: 0x04      UMask: 0x10   UMask: 0x03   UMask: 0x04
+                  -             -             -             -                -                -                -                -             -             -
+                  -             -             -             -                -                -                -                -             -             -
+cpu0       28171148       1253418             0             0                0                0                0                0            20            20
+cpu1       25411947       1275571             0             0                0                0                0                0            20            20
+cpu2       40401101       2325086             0             0                0                0                0                0            20            20
+cpu3       32622064       1541804             0             0                0                0                0                0            20            20
+cpu4       92255229       1675025             0             0                0                0                0                0            20            20
+cpu5       42303334       1729588             0             0                0                0                0                0            20            20
+eclapsed time:32.0439338684ms
+1593959584.73 Sun Jul 5 10:33:04 2020
+Sun Jul  5 10:33:04 2020   1593959584.76
+            incore0       incore1       uncore0       uncore1          uncore2          uncore3          uncore4          uncore5       uncore6       uncore7
+          LLC_MISSE     LLC_MISSE      UNC_READ     UNC_WRITE   U_QHL_REQUESTS   U_QHL_REQUESTS   U_QHL_REQUESTS   U_QHL_REQUESTS   UNC_L3_MISS   UNC_L3_MISS
+        UMask: 0x4f   UMask: 0x41   UMask: 0x07   UMask: 0x07      UMask: 0x01      UMask: 0x02      UMask: 0x04      UMask: 0x10   UMask: 0x03   UMask: 0x04
+                  -             -             -             -                -                -                -                -             -             -
+                  -             -             -             -                -                -                -                -             -             -
+cpu0       28357193       1260823             0             0                0                0                0                0            20            20
+cpu1       25541775       1276684             0             0                0                0                0                0            20            20
+cpu2       40858461       2331568             0             0                0                0                0                0            20            20
+cpu3       33531998       1555100             0             0                0                0                0                0            20            20
+cpu4       92303419       1675388             0             0                0                0                0                0            20            20
+cpu5       42402324       1731363             0             0                0                0                0                0            20            20
+eclapsed time:31.3029289246ms
+1593959585.76 Sun Jul 5 10:33:05 2020
+Sun Jul  5 10:33:05 2020   1593959585.79
+            incore0       incore1       uncore0       uncore1          uncore2          uncore3          uncore4          uncore5       uncore6       uncore7
+          LLC_MISSE     LLC_MISSE      UNC_READ     UNC_WRITE   U_QHL_REQUESTS   U_QHL_REQUESTS   U_QHL_REQUESTS   U_QHL_REQUESTS   UNC_L3_MISS   UNC_L3_MISS
+        UMask: 0x4f   UMask: 0x41   UMask: 0x07   UMask: 0x07      UMask: 0x01      UMask: 0x02      UMask: 0x04      UMask: 0x10   UMask: 0x03   UMask: 0x04
+                  -             -             -             -                -                -                -                -             -             -
+                  -             -             -             -                -                -                -                -             -             -
+cpu0       28545214       1262066             0             0                0                0                0                0            20            20
+cpu1       25659839       1276914             0             0                0                0                0                0            20            20
+cpu2       41308157       2332633             0             0                0                0                0                0            20            20
+cpu3       34414686       1560388             0             0                0                0                0                0            20            20
+cpu4       92333494       1675581             0             0                0                0                0                0            20            20
+cpu5       42546938       1734431             0             0                0                0                0                0            20            20
+eclapsed time:31.2139987946ms
+1593959586.8 Sun Jul 5 10:33:06 2020
+Sun Jul  5 10:33:06 2020   1593959586.82
+            incore0       incore1       uncore0       uncore1          uncore2          uncore3          uncore4          uncore5       uncore6       uncore7
+          LLC_MISSE     LLC_MISSE      UNC_READ     UNC_WRITE   U_QHL_REQUESTS   U_QHL_REQUESTS   U_QHL_REQUESTS   U_QHL_REQUESTS   UNC_L3_MISS   UNC_L3_MISS
+        UMask: 0x4f   UMask: 0x41   UMask: 0x07   UMask: 0x07      UMask: 0x01      UMask: 0x02      UMask: 0x04      UMask: 0x10   UMask: 0x03   UMask: 0x04
+                  -             -             -             -                -                -                -                -             -             -
+                  -             -             -             -                -                -                -                -             -             -
+cpu0       28677460       1263001             0             0                0                0                0                0            20            20
+cpu1       25796134       1278423             0             0                0                0                0                0            20            20
+cpu2       41681869       2333233             0             0                0                0                0                0            20            20
+cpu3       34805611       1561591             0             0                0                0                0                0            20            20
+cpu4       92960798       1679655             0             0                0                0                0                0            20            20
+cpu5       42680682       1736134             0             0                0                0                0                0            20            20
+eclapsed time:31.4102172852ms
+1593959587.83 Sun Jul 5 10:33:07 2020
+Sun Jul  5 10:33:07 2020   1593959587.86
+            incore0       incore1       uncore0       uncore1          uncore2          uncore3          uncore4          uncore5       uncore6       uncore7
+          LLC_MISSE     LLC_MISSE      UNC_READ     UNC_WRITE   U_QHL_REQUESTS   U_QHL_REQUESTS   U_QHL_REQUESTS   U_QHL_REQUESTS   UNC_L3_MISS   UNC_L3_MISS
+        UMask: 0x4f   UMask: 0x41   UMask: 0x07   UMask: 0x07      UMask: 0x01      UMask: 0x02      UMask: 0x04      UMask: 0x10   UMask: 0x03   UMask: 0x04
+                  -             -             -             -                -                -                -                -             -             -
+                  -             -             -             -                -                -                -                -             -             -
+cpu0       29059721       1268486             0             0                0                0                0                0            20            20
+cpu1       26593319       1304899             0             0                0                0                0                0            20            20
+cpu2       42224839       2372620             0             0                0                0                0                0            20            20
+cpu3       35655446       1604700             0             0                0                0                0                0            20            20
+cpu4       93258020       1684373             0             0                0                0                0                0            20            20
+cpu5       43249585       1788790             0             0                0                0                0                0            20            20
+eclapsed time:32.6550006866ms

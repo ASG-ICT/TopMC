@@ -1,0 +1,39 @@
+++++++++++++++++++++++++++++++++++++
+Init Kernel_Trace Module
+**********************************************
+ioremap:topmc_trace_buffer size is 65 Mbytes
+ioremap_cache: failed
+**********************************************
+topmc_trace module uninstall
+**********************************************
+
+------------[ cut here ]------------
+WARNING: CPU: 6 PID: 5314 at lib/kobject.c:616 kobject_put+0x58/0x60()
+kobject: '(null)' (ffff880461c3b150): is not initialized, yet kobject_put() is being called.
+Modules linked in: topmc_trace(OF+) topmc_module(OF) fuse ebtable_nat ebtables xt_CHECKSUM iptable_mangle bridge autofs4 8021q garp stp llc cpufreq_ondemand ipt_REJECT nf_conntrack_ipv4 nf_defrag_ipv4 iptable_filter ip_tables ip6t_REJECT nf_conntrack_ipv6 nf_defrag_ipv6 xt_state nf_conntrack ip6table_filter ip6_tables ipv6 vhost_net macvtap macvlan vhost tun kvm_intel kvm uinput mxm_wmi iTCO_wdt iTCO_vendor_support microcode pcspkr ipmi_si ipmi_msghandler acpi_cpufreq freq_table sg wmi i2c_i801 lpc_ich mfd_core ioatdma igb dca i2c_algo_bit i2c_core ptp pps_core ext4(F) jbd2(F) mbcache(F) sd_mod(F) crc_t10dif(F) ahci(F) libahci(F) isci(F) libsas(F) scsi_transport_sas(F) dm_mirror(F) dm_region_hash(F) dm_log(F) dm_mod(F)
+CPU: 6 PID: 5314 Comm: insmod Tainted: GF          O 3.12.13-TopMC #1
+Hardware name: Supermicro X9DR3-F/X9DR3-F, BIOS 3.2 03/11/2015
+ 0000000000000268 ffff8804462b7c98 ffffffff81553e18 0000000000000268
+ ffff8804462b7ce8 ffff8804462b7cd8 ffffffff8104d30c ffffffff81d33400
+ ffff880461c3b150 00000000000000f6 0000000000000000 0000000000000000
+Call Trace:
+ [<ffffffff81553e18>] dump_stack+0x49/0x61
+ [<ffffffff8104d30c>] warn_slowpath_common+0x8c/0xc0
+ [<ffffffff8104d3f6>] warn_slowpath_fmt+0x46/0x50
+ [<ffffffff81371c40>] ? kobj_unmap+0xf0/0x100
+ [<ffffffff81273e08>] kobject_put+0x58/0x60
+ [<ffffffff8118439b>] cdev_del+0x2b/0x40
+ [<ffffffffa0b67307>] cleanup_module+0x67/0xd0 [topmc_trace]
+ [<ffffffffa0b67710>] ? topmc_trace_buf_init+0x240/0x240 [topmc_trace]
+ [<ffffffffa0b67787>] init_module+0x77/0x190 [topmc_trace]
+ [<ffffffffa0b67710>] ? topmc_trace_buf_init+0x240/0x240 [topmc_trace]
+ [<ffffffff810002c2>] do_one_initcall+0xf2/0x1a0
+ [<ffffffff81075bc5>] ? __blocking_notifier_call_chain+0x65/0x80
+ [<ffffffff810bd204>] do_init_module+0x44/0x1b0
+ [<ffffffff810bf412>] load_module+0x5b2/0x6f0
+ [<ffffffff810bcb60>] ? __unlink_module+0x30/0x30
+ [<ffffffff810bc240>] ? module_sect_show+0x30/0x30
+ [<ffffffff810bf712>] SyS_init_module+0xd2/0x120
+ [<ffffffff815607d2>] system_call_fastpath+0x16/0x1b
+---[ end trace 6be2513a0df1bb52 ]---
+
