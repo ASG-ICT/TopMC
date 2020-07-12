@@ -26,7 +26,7 @@ Besides providing low overhead performance counters at specific time, TopMC can 
 
 ### Operating environment
 
-   linux kernel 3.10.X
+   linux kernel 3.10.X or 4.18
 
 ### Compile and Install 
 
