@@ -530,7 +530,7 @@ int topmc_enable_write_broadwell(struct file *filp,const char *buffer,size_t cou
 			&&(counter < TOPMC_MSR_XEON55XX_PerfCtrNum + TOPMC_MSR_IVYBRIGE_E_UNC_PerfCtrNum)) {
 			counter = counter-TOPMC_MSR_XEON55XX_PerfCtrNum-TOPMC_U_MSR_PMON_PerfCtrNum-TOPMC_PCU_MSR_PMON_PerfCtrNum;
 			event = topmc_procs[cpu][TOPMC_MSR_XEON55XX_PerfCtrNum+TOPMC_U_MSR_PMON_PerfCtrNum+TOPMC_PCU_MSR_PMON_PerfCtrNum+counter].event;
-			printk("enable = %c,counter = %d, envet = 0x%lx, cpu = %d,event = 0x%lx\n",enable,counter,event,cpu,event);
+//			printk("enable = %c,counter = %d, envet = 0x%lx, cpu = %d,event = 0x%lx\n",enable,counter,event,cpu,event);
 			int cboxnum = cpu * 2;
 			if (enable == '1') {
 				if( topmc_procs[cpu][TOPMC_MSR_XEON55XX_PerfCtrNum+TOPMC_U_MSR_PMON_PerfCtrNum+TOPMC_PCU_MSR_PMON_PerfCtrNum+counter].enable == 1) {
@@ -540,7 +540,7 @@ int topmc_enable_write_broadwell(struct file *filp,const char *buffer,size_t cou
 
 				TOPMC_WRMSRL(TOPMC_C0_MSR_PMON_CTR0+counter+cboxnum/2*TOPMC_CBox_MSR_PMON_BOX_Distance, 0LL, cpu);
 				TOPMC_RDMSRL(TOPMC_C0_MSR_PMON_CTL0+counter+cboxnum/2*TOPMC_CBox_MSR_PMON_BOX_Distance, val, cpu);
-				printk("*** before enable write , val = %d\n",val);
+//				printk("*** before enable write , val = %d\n",val);
 				//val &= TOPMC_MSR_XEON55XX_UNC_EVENTSEL_RESERVED;
 				val &= 0ULL;
 				TOPMC_CTRL_SET_ENABLE(val);
@@ -554,7 +554,7 @@ int topmc_enable_write_broadwell(struct file *filp,const char *buffer,size_t cou
 				TOPMC_CTRL_SET_ACTIVE(val);
 				TOPMC_WRMSRL(TOPMC_C0_MSR_PMON_CTL0+counter+cboxnum/2*TOPMC_CBox_MSR_PMON_BOX_Distance, val, cpu);
 				TOPMC_RDMSRL(TOPMC_C0_MSR_PMON_CTL0+counter+cboxnum/2*TOPMC_CBox_MSR_PMON_BOX_Distance, val, cpu);
-                                printk("*** after enable write , val = %d\n",val);
+ //                               printk("*** after enable write , val = %d\n",val);
 				u32 mask;
 				TOPMC_RDMSRL(TOPMC_U_MSR_PMON_GLOBAL_CTL, mask, 0);
         			mask |= (1ULL << 29);
@@ -715,8 +715,8 @@ int topmc_event_write_broadwell(struct file *filp,const char *buffer,size_t coun
 		return -EFAULT;
 	if (ret == 0 || ret > TOPMC_EVENT_LENGTH)
 		return -EINVAL;
-	if(counter > 6)
-	printk("counter = %d,cpu = %d, event = %s \n", counter, cpu , event);
+//	if(counter > 6)
+//	printk("counter = %d,cpu = %d, event = %s \n", counter, cpu , event);
 
 	for(i=0;i<TOPMC_EVENT_LENGTH;i++){
 		if(!isxdigit(event[i])){
@@ -831,7 +831,7 @@ int topmc_value_read_broadwell(struct file *filp,char *buffer,size_t count,loff_
 		int cboxnum = cpu * 2;
 		perfctr =  TOPMC_C0_MSR_PMON_CTR0 + cboxnum / 2 * TOPMC_CBox_MSR_PMON_BOX_Distance 
 					+ counter - TOPMC_MSR_XEON55XX_PerfCtrNum - TOPMC_U_MSR_PMON_PerfCtrNum - TOPMC_PCU_MSR_PMON_PerfCtrNum;
-		printk("* perfctr = 0x%lx,cpu = %hd\n",perfctr,cpu);
+//		printk("* perfctr = 0x%lx,cpu = %hd\n",perfctr,cpu);
 		//      perfctrl = TOPMC_MSR_XEON55XX_UNC_EVNTSEL0 + counter - TOPMC_MSR_XEON55XX_PerfCtrNum;
 	}
 	char tmpstore[30] = {0};
@@ -840,10 +840,10 @@ int topmc_value_read_broadwell(struct file *filp,char *buffer,size_t count,loff_
 	if(topmc_procs[cpu][counter].enable == 1){
 		//      printk("+->topmc_value_read() : enable ==1   \n");
 		//if(counter < TOPMC_MSR_XEON55XX_PerfCtrNum) //Zhang Jiutian: Fix Uncore bug
-		printk("** before read cpu = %hd, value = %llu\n",cpu,val);
+//		printk("** before read cpu = %hd, value = %llu\n",cpu,val);
 		TOPMC_RDMSRL(perfctr, val, cpu);
 		//sprintf(page, "%llu\n", val);
-		printk("** after read cpu = %hd, value = %llu\n",cpu,val);
+//		printk("** after read cpu = %hd, value = %llu\n",cpu,val);
 		int len = 1;
 		unsigned long long valtmp = val;
 		while(valtmp / 10 != 0){
@@ -889,8 +889,8 @@ int topmc_value_write_broadwell(struct file *filp,const char *buffer,size_t coun
 	unsigned int perfctr, eventctr;
 	
 	topmc_split32to16(mix,&cpu,&counter);
-	printk("counter = %d\n",counter);
-	printk("counter = %d\n",counter);
+//	printk("counter = %d\n",counter);
+//	printk("counter = %d\n",counter);
 	if(counter>=TOPMC_MSR_XEON55XX_PerfCtrNum + TOPMC_U_MSR_PMON_PerfCtrNum + TOPMC_PCU_MSR_PMON_PerfCtrNum + TOPMC_CBox_MSR_PMON_PerfCtrNum){
 		printk("+->topmc: topmc_value_write(): counter err : %d!!!\n",counter);
 		return 0;
